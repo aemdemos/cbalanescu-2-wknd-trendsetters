@@ -45,3 +45,159 @@
     padding: 40px 32px;
   }
 }
+
+.hero.hero6 {
+  position: relative;
+  width: 100%;
+  min-height: 600px;
+  display: grid;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+/* Full-bleed background image */
+.hero.hero6 > div:first-child {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.hero.hero6 > div:first-child picture,
+.hero.hero6 > div:first-child img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/* Flex for vertical centering of panel */
+.hero.hero6 > div:last-child {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100%;
+  width: 100%;
+}
+
+/* Overlay panel refinement: lighter, narrower, more left-inset, softer border */
+.hero.hero6 > div:last-child > div {
+  background: rgb(140 140 140 / 19%);
+  backdrop-filter: blur(1.5px);
+  border-radius: 14px;
+  border: 1px solid #fff;
+  max-width: 375px;
+  padding: 35px 24px 24px 36px;
+  margin-left: 64px;
+  margin-top: auto;
+  margin-bottom: auto;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  box-shadow: 0 2px 14px 0 rgb(0 0 0 / 6%);
+}
+
+@media (width <= 900px) {
+  .hero.hero6 > div:last-child > div {
+    max-width: 97vw;
+    margin-left: 6px;
+    padding: 16px 4vw;
+    border-radius: 10px;
+  }
+}
+
+/* Heading: more open/airy */
+.hero.hero6 h1 {
+  color: #fff;
+  font-family: var(--heading-font-family);
+  font-size: 3.55rem;
+  font-weight: 400;
+  line-height: 1.19;
+  letter-spacing: 0.13em;
+  margin: 0 0 1.1rem;
+  text-align: left;
+  text-shadow: 0 1px 8px rgb(0 0 0 / 8%);
+}
+
+/* Supporting text: lighter */
+.hero.hero6 p {
+  color: rgb(255 255 255 / 52%);
+  font-size: 0.95rem;
+  line-height: 1.55;
+  margin: 0 0 2.1rem;
+  text-align: left;
+  max-width: 98%;
+}
+
+/* Button container: horizontal, more gap, more margin on top */
+.hero.hero6 .button-container {
+  display: flex;
+  flex-direction: row;
+  gap: 22px;
+  margin: 1.7rem 0 0;
+  width: 100%;
+}
+
+/* Outline button: thinner, more padding, left-aligned */
+.hero-container > .hero-wrapper > .hero.hero6 .button {
+  background: transparent;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 2.4em;
+  font-size: 1.01rem;
+  font-weight: 500;
+  padding: 0.75em 2.2em;
+  margin: 0;
+  line-height: 1.2;
+  transition: background 0.18s, color 0.18s;
+  box-shadow: none;
+  text-align: center;
+  align-self: flex-start;
+}
+
+.hero-container > .hero-wrapper > .hero.hero6 .button:hover,
+.hero-container > .hero-wrapper > .hero.hero6 .button:focus {
+  background: #fff;
+  color: #222;
+  text-decoration: none;
+}
+
+/* Remove unwanted centering, force left alignment for all text */
+.hero.hero6 h1,
+.hero.hero6 p {
+  margin-left: 0;
+  margin-right: 0;
+  max-width: 100%;
+  text-align: left;
+}
+
+/* Edge-to-edge hero block */
+.hero-container > .hero-wrapper {
+  max-width: unset;
+  padding: 0;
+}
+
+/* Small screens: bigger padding on sides, heading still readable */
+@media (width <= 600px) {
+  .hero.hero6 {
+    min-height: 320px;
+  }
+
+  .hero.hero6 > div:last-child > div {
+    padding: 10px 6vw;
+    margin-left: 0;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+  }
+
+  .hero.hero6 h1 {
+    font-size: 1.2rem;
+  }
+}
