@@ -588,8 +588,6 @@
   padding: 7rem 0 0;
 }
 
-/* Only show the first two images in the row, hide the rest for desktop */
-
 .columns > div > .columns-img-col:nth-child(n+3) {
   display: none;
 }
@@ -615,7 +613,6 @@
   background: #f8f8f8;
 }
 
-/* Responsive: stack images vertically and reduce padding/gap on small screens */
 @media (width <= 900px) {
   .columns {
     padding: 2rem 0 0;
@@ -635,8 +632,126 @@
     display: flex;
   }
 
-  /* Show both images vertically on mobile */
   .columns > div > .columns-img-col:nth-child(n+3) {
     display: none;
   }
+}
+
+
+.columns.columns14 {
+  padding: 0;
+  background: #fff;
+}
+
+/* Side-by-side flex row, top aligned */
+.columns.columns14 > div {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 3.2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  padding-top: 0.7rem;
+  padding-bottom: 0.7rem;
+}
+
+@media (width <= 900px) {
+  .columns.columns14 > div {
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 95vw;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+}
+
+/* Stack children in each column vertically */
+.columns.columns14 > div > div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Headline column: visually dominant */
+.columns.columns14 > div > div:first-child {
+  flex: 1 1 68%;
+  min-width: 320px;
+  max-width: 850px;
+}
+
+/* Content column: left-aligned, slightly wider for better wrap */
+.columns.columns14 > div > div:last-child {
+  flex: 0 1 340px;
+  max-width: 340px;
+  min-width: 180px;
+  align-items: flex-start;
+}
+
+/* Headline styles */
+.columns.columns14 h2 {
+  font-family: var(--heading-font-family);
+  font-size: 3rem;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  color: #000;
+  margin: 0 0 1.1rem;
+  line-height: 1.07;
+  text-align: left;
+}
+
+@media (width <= 900px) {
+  .columns.columns14 h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+}
+
+/* Description paragraph: compact below, left-aligned, allow wrap to multiple lines */
+.columns.columns14 > div > div:last-child p:not(.button-container) {
+  font-family: var(--body-font-family);
+  font-size: 1rem;
+  color: #000;
+  margin: 0 0 0.15rem;
+  line-height: 1.5;
+  text-align: left;
+  max-width: 100%;
+}
+
+/* Remove margin below button container (tight group) */
+.columns.columns14 .button-container {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0;
+  width: 100%;
+  display: block;
+}
+
+/* Button: pill shape, compact, left-aligned */
+.columns.columns14 .button {
+  box-sizing: border-box;
+  padding: 0.16em 1.1em;
+  border: 1px solid #000;
+  border-radius: 2em;
+  background: #fff;
+  color: #000;
+  font-family: var(--body-font-family);
+  font-size: 0.91rem;
+  font-weight: 500;
+  text-align: center;
+  text-decoration: none;
+  margin-top: 0;
+  margin-bottom: 0;
+  display: inline-block;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+  cursor: pointer;
+}
+
+.columns.columns14 .button:hover,
+.columns.columns14 .button:focus {
+  background: #000;
+  color: #fff;
+  border-color: #000;
+  text-decoration: none;
 }
