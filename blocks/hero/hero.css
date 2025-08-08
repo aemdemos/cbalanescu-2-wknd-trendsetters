@@ -622,13 +622,11 @@
   background: none;
 }
 
-/* Remove any possible white gap above the hero */
 .hero.hero28:first-child {
   margin-top: 0;
   padding-top: 0;
 }
 
-/* Make the image fill the entire hero block as a background */
 .hero.hero28 > div:first-child {
   position: absolute;
   inset: 0;
@@ -648,7 +646,6 @@
   pointer-events: none;
 }
 
-/* Overlay: absolute, full, flex central alignment */
 .hero.hero28 > div:last-child {
   position: absolute;
   inset: 0;
@@ -661,7 +658,6 @@
   pointer-events: none;
 }
 
-/* Heading: size, line height, letter spacing and width for best match */
 .hero.hero28 h1 {
   color: #fff;
   font-family: Montserrat, Orbitron, Futura, var(--heading-font-family), sans-serif;
@@ -699,5 +695,156 @@
     font-size: 12vw;
     padding: 0 5vw;
     max-width: 98vw;
+  }
+}
+
+
+.hero.hero35 {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  min-height: 200px;
+  padding: 40px 0 24px;
+  background: #fff;
+  border-bottom: 2px solid #000;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+/* Left "spacer" */
+.hero.hero35 > div:first-child {
+  flex: 0 0 2vw;
+  min-width: 24px;
+  max-width: 48px;
+}
+
+/* Main content horizontal row for text+button */
+.hero.hero35 > div:last-child {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  min-width: 0;
+  width: 100%;
+}
+
+/* Content container: grid, two columns, tighter gap */
+.hero.hero35 > div:last-child > div {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(220px, 330px);
+  align-items: flex-start;
+  gap: 0 24px; /* tighter horizontal gap */
+  width: 100%;
+  min-width: 0;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Text column (heading, subheading) */
+.hero.hero35 h2 {
+  font-family: Syncopate, "Syncopate Fallback", sans-serif;
+  font-weight: 600;
+  font-size: 2.6rem;
+  line-height: 1.08;
+  color: #131313;
+  margin: 0 0 14px;
+  letter-spacing: 0.01em;
+  max-width: 600px;
+  text-align: left;
+  grid-column: 1/2;
+}
+
+.hero.hero35 p:not(.button-container) {
+  font-family: var(--body-font-family);
+  font-size: 1.1rem;
+  color: #757575;
+  margin: 0;
+  max-width: 440px;
+  text-align: left;
+  grid-column: 1/2;
+}
+
+/* Button column: right-aligned, top-aligned */
+.hero.hero35 .button-container {
+  grid-column: 2/3;
+  grid-row: 1 / span 2;
+  place-self: start end;
+  display: flex;
+  align-items: flex-start;
+  min-width: 220px;
+  margin: 0;
+  padding: 0;
+}
+
+/* Button itself: pill-shaped, outlined, subtle shadow */
+.hero.hero35 .button {
+  width: 100%;
+  max-width: 330px;
+  min-width: 220px;
+  padding: 13px 0 12px;
+  border: 2px solid #111;
+  border-radius: 28px;
+  background: #fff;
+  color: #111;
+  font-size: 1rem;
+  font-family: var(--body-font-family);
+  font-weight: 500;
+  text-align: center;
+  box-shadow: 0 2px 0 0 #dada48;
+  margin: 0;
+  transition: box-shadow 0.2s, background 0.2s;
+}
+
+/* Button hover/focus */
+.hero.hero35 .button:hover,
+.hero.hero35 .button:focus {
+  background: #f6f6f6;
+  color: #000;
+}
+
+/* Responsive: stack vertically on mobile */
+@media (width <= 900px) {
+  .hero.hero35 {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 32px 0 20px;
+    min-height: unset;
+  }
+
+  .hero.hero35 > div:first-child {
+    display: none;
+  }
+
+  .hero.hero35 > div:last-child {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    min-width: 0;
+  }
+
+  .hero.hero35 > div:last-child > div {
+    display: flex;
+    flex-direction: column;
+    gap: 28px 0;
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .hero.hero35 .button-container {
+    justify-content: center;
+    margin: 0;
+    min-width: 0;
+    width: 100%;
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .hero.hero35 .button {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
   }
 }
