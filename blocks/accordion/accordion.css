@@ -1,8 +1,8 @@
+/* stylelint-disable no-descending-specificity */
 .accordion details {
   border: 1px solid #dadada;
 }
 
-/* stylelint-disable-next-line no-descending-specificity */
 .accordion details + details {
   margin-top: 24px;
 }
@@ -58,4 +58,136 @@
 .accordion details[open] .accordion-item-body {
   border-top: 1px solid #dadada;
   background-color: var(--background-color);
+}
+
+
+.accordion.accordion13 {
+  background: #fff;
+  border: none;
+  padding: 0;
+}
+
+/* Ensure details uses full width and is row flex container */
+.accordion.accordion13 details {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  min-height: 56px;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  border-bottom: 1px solid #bfbfbf;
+}
+
+/* Remove border from last row */
+.accordion.accordion13 details:last-child {
+  border-bottom: none;
+}
+
+/* Left column: summary */
+.accordion.accordion13 summary {
+  display: flex;
+  align-items: center;
+  flex: 0 0 45%;
+  min-width: 0;
+  padding-left: 8px;
+  padding-right: 0;
+  margin: 0;
+  border: none;
+  background: none;
+  box-shadow: none;
+  list-style: none;
+  cursor: default;
+  outline: none;
+  transition: none;
+  white-space: normal;
+}
+
+/* Remove marker/arrow from summary */
+.accordion.accordion13 summary::-webkit-details-marker,
+.accordion.accordion13 summary::marker,
+.accordion.accordion13 summary::after {
+  display: none;
+}
+
+/* Question text styling */
+.accordion.accordion13 summary p {
+  text-transform: uppercase;
+  font-family: Orbitron, Arial, sans-serif;
+  font-size: 18px;
+  letter-spacing: 1px;
+  color: #6d6d6d;
+  font-weight: 400;
+  margin: 0;
+  line-height: 1.2;
+  white-space: normal;
+  word-break: break-all;
+}
+
+/* Right column: answer */
+.accordion.accordion13 .accordion-item-body {
+  display: flex;
+  align-items: center;
+  flex: 0 0 55%;
+  min-width: 0;
+  padding-left: 16px;
+  padding-right: 0;
+  margin: 0;
+  border: none;
+  background: none;
+
+  /* Make sure it doesn't collapse if empty, and is always visible if present */
+  height: auto;
+  max-height: unset;
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Answer text styling */
+.accordion.accordion13 .accordion-item-body p {
+  color: #2d2d2d;
+  font-size: 13px;
+  font-family: Arial, sans-serif;
+  font-weight: 400;
+  margin: 0;
+  line-height: 1.2;
+  white-space: normal;
+  word-break: break-all;
+}
+
+/* Remove any top border/background from answer body if inherited */
+.accordion.accordion13 details[open] .accordion-item-body,
+.accordion.accordion13 .accordion-item-body {
+  border-top: none;
+  background: none;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+/* Responsive stacking on mobile */
+@media (width <= 700px) {
+  .accordion.accordion13 details {
+    flex-direction: column;
+    min-height: unset;
+    padding: 12px 0;
+  }
+
+  .accordion.accordion13 summary,
+  .accordion.accordion13 .accordion-item-body {
+    flex: 1 1 100%;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  .accordion.accordion13 summary p {
+    font-size: 16px;
+  }
+
+  .accordion.accordion13 .accordion-item-body p {
+    font-size: 12px;
+  }
 }
