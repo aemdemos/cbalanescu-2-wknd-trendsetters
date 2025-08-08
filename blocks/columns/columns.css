@@ -1619,7 +1619,6 @@
   gap: 0 8vw;
 }
 
-/* Responsive: stack columns vertically */
 @media (width <= 900px) {
   .columns.columns30 > div {
     grid-template-columns: 1fr;
@@ -1628,14 +1627,12 @@
   }
 }
 
-/* --- LEFT COLUMN --- */
 .columns.columns30 > div > div:nth-child(1),
 .columns.columns30 > div > div:nth-child(2) {
   grid-column: 1 / 2;
   width: 100%;
 }
 
-/* Author styling */
 .columns.columns30 > div > div:nth-child(1) p {
   color: #888;
   font-size: 16px;
@@ -1644,7 +1641,6 @@
   font-weight: 400;
 }
 
-/* Tags stacked vertically with pill styling */
 .columns.columns30 > div > div:nth-child(2) {
   display: flex;
   flex-direction: column;
@@ -1666,7 +1662,6 @@
   white-space: nowrap;
 }
 
-/* --- RIGHT COLUMN: Group headline and paragraphs TIGHTLY as a vertical stack --- */
 .columns.columns30 > div > div:nth-child(3),
 .columns.columns30 > div > div:nth-child(4) {
   grid-column: 2 / 3;
@@ -1675,7 +1670,6 @@
   align-self: start;
 }
 
-/* Remove gap between headline and paragraph blocks */
 .columns.columns30 > div > div:nth-child(3) {
   margin-bottom: 0;
   padding-bottom: 0;
@@ -1685,7 +1679,6 @@
   margin-top: 0;
 }
 
-/* Headline styling */
 .columns.columns30 > div > div:nth-child(3) h2 {
   font-family: var(--heading-font-family);
   font-size: clamp(2.8rem, 9vw, 5.5rem);
@@ -1693,13 +1686,12 @@
   line-height: 0.95;
   letter-spacing: 1px;
   color: #111;
-  margin: 0 0 12px; /* very tight gap */
+  margin: 0 0 12px;
   text-align: left;
   overflow-wrap: break-word;
   max-width: 680px;
 }
 
-/* Paragraphs styling */
 .columns.columns30 > div > div:nth-child(4) p {
   font-size: 15px;
   color: #222;
@@ -1718,9 +1710,6 @@
   margin-bottom: 0;
 }
 
-/* Extra tweak: reduce top margin on first right column grid row for even tighter vertical grouping */
-
-/* Responsive adjustments */
 @media (width <= 900px) {
   .columns.columns30 > div > div:nth-child(1),
   .columns.columns30 > div > div:nth-child(2),
@@ -1743,5 +1732,84 @@
 
   .columns.columns30 > div > div:nth-child(4) {
     margin-top: 0;
+  }
+}
+
+
+.columns.columns31 {
+  background: #fafbf6;
+  padding: 8px 0;
+}
+
+/* Main row: flex, balanced side-by-side layout, vertically centered */
+.columns.columns31 > div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 32px; /* reduced gap for more room for text */
+  max-width: 1400px; /* increased max-width for more horizontal space */
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Let text columns take up more space, keep button compact */
+.columns.columns31 > div > div:nth-child(1),
+.columns.columns31 > div > div:nth-child(2) {
+  flex: 1 1 48%;
+  min-width: 0;
+  font-family: var(--body-font-family);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #222;
+  margin: 0;
+  padding: 0;
+  white-space: normal;
+  overflow: visible;
+  text-overflow: initial;
+}
+
+.columns.columns31 > div > div:nth-child(3) {
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+/* Button styling */
+.columns.columns31 .button-container .button {
+  position: relative;
+  display: inline-block;
+  background: #fff;
+  color: #222;
+  font-family: var(--body-font-family);
+  font-size: 13px;
+  line-height: 1.5;
+  font-weight: 400;
+  border: 1px solid #222;
+  border-radius: 999px;
+  padding: 3px 18px;
+  text-decoration: none;
+  box-sizing: border-box;
+  margin: 0;
+  transition: border-color 0.2s;
+  box-shadow: 0 3px 0 0 #f7f37e;
+}
+
+/* Responsive: stack vertically on small screens */
+@media (width <= 900px) {
+  .columns.columns31 > div {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 24px;
+    max-width: 100%;
+  }
+
+  .columns.columns31 > div > div {
+    max-width: 100%;
+  }
+
+  .columns.columns31 > div > div:nth-child(3) {
+    justify-content: flex-start;
   }
 }
