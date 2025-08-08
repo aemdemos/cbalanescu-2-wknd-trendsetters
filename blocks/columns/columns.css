@@ -963,22 +963,15 @@
   }
 }
 
-
-/* --- Block container styling --- */
 .columns.columns18 {
   background: #fff;
   border-radius: 24px;
-
-  /* Remove vertical padding to fix excessive space above columns */
   padding: 0 64px 48px;
   max-width: 1200px;
   margin: 40px auto 0;
   box-sizing: border-box;
-
-  /* Remove any extra top margin/padding from ancestor sections if possible */
 }
 
-/* --- Main columns flex layout: side-by-side on desktop, flush to top --- */
 .columns.columns18.block.columns-2-cols {
   display: flex;
   flex-direction: row;
@@ -989,7 +982,6 @@
   padding-top: 0;
 }
 
-/* --- Responsive: stack vertically on mobile --- */
 @media (width <= 900px) {
   .columns.columns18 {
     padding: 0 8px 24px;
@@ -1004,7 +996,6 @@
   }
 }
 
-/* --- Left column: stack content vertically, full width --- */
 .columns.columns18.block.columns-2-cols > div:first-child {
   display: flex;
   flex-direction: column;
@@ -1016,7 +1007,6 @@
   margin-top: 0;
 }
 
-/* --- Headings and description --- */
 .columns.columns18.block.columns-2-cols > div:first-child > div:first-child {
   margin-bottom: 0;
   margin-top: 0;
@@ -1049,7 +1039,6 @@
   max-width: 420px;
 }
 
-/* --- Contact info: vertical stack of horizontal flex rows --- */
 .columns.columns18.block.columns-2-cols > div:first-child > div:last-child {
   display: flex;
   flex-direction: column;
@@ -1058,7 +1047,6 @@
   margin-top: 0;
 }
 
-/* --- Contact block (h4 + ul): tighten margin for h4 --- */
 .columns.columns18.block.columns-2-cols > div:first-child > div:last-child h4 {
   font-size: 13px;
   letter-spacing: 1px;
@@ -1069,7 +1057,6 @@
   line-height: 1.2;
 }
 
-/* --- Each ul = flex row: icon + label/info side by side --- */
 .columns.columns18.block.columns-2-cols > div:first-child > div:last-child ul {
   display: flex;
   flex-direction: row;
@@ -1080,14 +1067,12 @@
   margin: 0;
 }
 
-/* --- Remove bullets and spacing from li --- */
 .columns.columns18.block.columns-2-cols > div:first-child > div:last-child ul li {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-/* --- Contact icon appearance, size, and circle --- */
 .columns.columns18.block.columns-2-cols > div:first-child > div:last-child ul picture,
 .columns.columns18.block.columns-2-cols > div:first-child > div:last-child ul img {
   display: inline-block;
@@ -1106,7 +1091,6 @@
   box-shadow: none;
 }
 
-/* --- Contact details (email, phone, address) --- */
 .columns.columns18.block.columns-2-cols > div:first-child > div:last-child ul li a,
 .columns.columns18.block.columns-2-cols > div:first-child > div:last-child ul li {
   font-size: 16px;
@@ -1122,7 +1106,6 @@
   text-decoration: none;
 }
 
-/* --- Right column: image column top-aligned with left --- */
 .columns.columns18.block.columns-2-cols > div:last-child {
   display: flex;
   flex-direction: column;
@@ -1133,7 +1116,6 @@
   margin-top: 0;
 }
 
-/* --- Image styling --- */
 .columns.columns18.block.columns-2-cols > div:last-child .columns-img-col {
   width: 100%;
   max-width: 660px;
@@ -1152,7 +1134,6 @@
   margin: 0;
 }
 
-/* --- Responsive: image full width on mobile --- */
 @media (width <= 900px) {
   .columns.columns18.block.columns-2-cols > div:last-child .columns-img-col {
     max-width: 100%;
@@ -1163,7 +1144,6 @@
   }
 }
 
-/* --- Remove margin/padding/bullets from ul/li in contact info (global override) --- */
 .columns.columns18 ul,
 .columns.columns18 li {
   margin: 0;
@@ -1171,9 +1151,6 @@
   list-style: none;
 }
 
-/* --- Prevent accidental vertical gap above content --- */
-
-/* --- Left column width a bit larger for balance on large screens --- */
 @media (width >= 1200px) {
   .columns.columns18.block.columns-2-cols > div:first-child {
     flex: 1.18 1 0;
@@ -1181,5 +1158,233 @@
 
   .columns.columns18.block.columns-2-cols > div:last-child {
     flex: 1 1 0;
+  }
+}
+
+
+.columns.columns26 {
+  background: #F8F9F6;
+  padding: 0;
+}
+
+/* Two column grid layout */
+.columns.columns26 > div {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr; /* right column slightly wider for logo/text */
+  max-width: 1100px;
+  margin: 0 auto;
+  min-height: 440px;
+  align-items: stretch;
+  padding: 56px 32px 40px;
+  box-sizing: border-box;
+  column-gap: 0;
+}
+
+/* LEFT COLUMN: Stack vertically, align to top */
+.columns.columns26 > div > div:first-child {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  max-width: 690px;
+  min-width: 0;
+  height: 100%;
+  grid-column: 1;
+}
+
+/* Heading styles */
+.columns.columns26 > div > div:first-child > p:first-child {
+  font-family: var(--heading-font-family);
+  font-size: 2.7rem;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  line-height: 1.09;
+  color: #232323;
+  margin: 0 0 24px;
+}
+
+/* Testimonial paragraph */
+.columns.columns26 > div > div:first-child > p:nth-child(2) {
+  font-family: var(--body-font-family);
+  font-size: 1.09rem;
+  color: #232323;
+  margin: 0 0 38px;
+  line-height: 1.6;
+  max-width: 486px;
+  position: relative;
+}
+
+/* Divider after testimonial */
+.columns.columns26 > div > div:first-child > p:nth-child(2)::after {
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: #E3E4E2;
+  margin: 32px 0 18px;
+  content: "";
+}
+
+/* Avatar/name/role horizontal row below divider */
+.columns.columns26 > div > div:first-child > .columns-avatar-row,
+.columns.columns26 > div > div:first-child > p:nth-child(3),
+.columns.columns26 > div > div:first-child > p:nth-child(4),
+.columns.columns26 > div > div:first-child > p:nth-child(5) {
+  margin: 0;
+  padding: 0;
+}
+
+/* Flex row for avatar/name/role */
+.columns.columns26 > div > div:first-child .columns-avatar-row,
+.columns.columns26 > div > div:first-child > .columns-avatar-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.columns.columns26 > div > div:first-child > p:nth-child(3),
+.columns.columns26 > div > div:first-child > p:nth-child(4),
+.columns.columns26 > div > div:first-child > p:nth-child(5) {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+}
+
+/* Avatar image */
+.columns.columns26 > div > div:first-child > p:nth-child(3) picture,
+.columns.columns26 > div > div:first-child > p:nth-child(3) img {
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+  margin: 0;
+  vertical-align: middle;
+}
+
+/* Author name and role (next to avatar) */
+.columns.columns26 > div > div:first-child > p:nth-child(4) {
+  font-weight: 700;
+  font-size: 1rem;
+  color: #232323;
+  margin-left: 8px;
+  margin-right: 0;
+  display: block;
+}
+
+.columns.columns26 > div > div:first-child > p:nth-child(5) {
+  font-weight: 400;
+  font-size: 1rem;
+  color: #232323;
+  opacity: 0.9;
+  margin-left: 0;
+  margin-right: 0;
+  display: block;
+}
+
+/* Group p3, p4, p5 (avatar, name, role) into a row */
+.columns.columns26 > div > div:first-child > .columns-avatar-row,
+.columns.columns26 > div > div:first-child > p:nth-child(3) {
+  margin-top: 18px;
+}
+
+.columns.columns26 > div > div:first-child > p:nth-child(3) {
+  margin-right: 8px;
+}
+
+/* RIGHT COLUMN: logo + optional text horizontally aligned, bottom right */
+.columns.columns26 > div > .columns-img-col {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-end;
+  min-width: 0;
+  height: 100%;
+  grid-column: 2;
+  padding-bottom: 32px;
+  padding-right: 24px;
+  gap: 16px;
+}
+
+/* Logo image styles */
+.columns.columns26 > div > .columns-img-col picture,
+.columns.columns26 > div > .columns-img-col img {
+  display: inline-block;
+  height: 42px;
+  width: auto;
+  max-width: 130px;
+  margin: 0;
+  vertical-align: middle;
+}
+
+.columns.columns26 > div > .columns-img-col img {
+  filter: none;
+  opacity: 1;
+}
+
+/* Show any text-based logo/brand in .columns-img-col (if present), larger and bold */
+.columns.columns26 > div > .columns-img-col *:not(img, picture) {
+  font-family: var(--heading-font-family);
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  color: #232323;
+  align-self: flex-end;
+  display: inline-block;
+  margin-bottom: 2px;
+  margin-left: 8px;
+}
+
+/* Responsiveness: stack on mobile */
+@media (width <= 900px) {
+  .columns.columns26 > div {
+    grid-template-columns: 1fr;
+    padding: 24px 8px 16px;
+    max-width: 99vw;
+    min-height: unset;
+  }
+
+  .columns.columns26 > div > div:first-child {
+    max-width: none;
+    height: auto;
+    grid-column: 1;
+  }
+
+  .columns.columns26 > div > .columns-img-col {
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-top: 24px;
+    margin-bottom: 0;
+    height: auto;
+    padding-bottom: 0;
+    padding-right: 0;
+  }
+
+  .columns.columns26 > div > .columns-img-col picture,
+  .columns.columns26 > div > .columns-img-col img {
+    height: 36px;
+    max-width: 90px;
+  }
+
+  .columns.columns26 > div > .columns-img-col *:not(img, picture) {
+    font-size: 1.1rem;
+    margin-left: 4px;
+  }
+
+  /* Avatar/name/role stack vertically on mobile for more space */
+  .columns.columns26 > div > div:first-child > p:nth-child(3),
+  .columns.columns26 > div > div:first-child > p:nth-child(4),
+  .columns.columns26 > div > div:first-child > p:nth-child(5) {
+    display: block;
+    margin-right: 0;
+    margin-left: 0;
+    gap: 0;
+  }
+
+  .columns.columns26 > div > div:first-child > p:nth-child(3) {
+    margin-bottom: 8px;
   }
 }
