@@ -815,7 +815,6 @@
   display: block;
 }
 
-/* Card body styling: ensure it is visible and positioned below the image */
 .cards.cards24 .cards-card-body {
   padding: 18px;
   background: #fff;
@@ -825,7 +824,6 @@
   justify-content: flex-start;
 }
 
-/* Tag and date row: flex row, baseline align */
 .cards.cards24 .cards-card-body .cards-tagdate-row,
 .cards.cards24 .cards-card-body > p:first-child + p {
   display: flex;
@@ -834,7 +832,6 @@
   margin-bottom: 8px;
 }
 
-/* Tag pill styling */
 .cards.cards24 .cards-card-body > p:first-child {
   background: #E7E7E7;
   color: #222;
@@ -852,7 +849,6 @@
   display: inline-flex;
 }
 
-/* Date styling */
 .cards.cards24 .cards-card-body > p:nth-child(2) {
   color: #222;
   font-size: 12px;
@@ -863,13 +859,11 @@
   align-items: center;
 }
 
-/* Remove default paragraph spacing for tag/date */
 .cards.cards24 .cards-card-body > p {
   margin: 0;
   padding: 0;
 }
 
-/* Title styling */
 .cards.cards24 .cards-card-body h3 {
   margin-top: 12px;
   margin-bottom: 0;
@@ -883,7 +877,6 @@
   overflow-wrap: break-word;
 }
 
-/* Responsive adjustments */
 @media (width <= 800px) {
   .cards.cards24 > ul {
     grid-template-columns: 1fr 1fr;
@@ -904,5 +897,201 @@
   .cards.cards24 > ul {
     grid-template-columns: 1fr;
     gap: 12px;
+  }
+}
+
+
+.cards.cards25 {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.cards.cards25 > ul {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  grid-template-rows: minmax(210px, auto) minmax(180px, auto) minmax(152px, auto);
+  gap: 12px 24px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  position: relative;
+}
+
+/* CARD BASE STYLES */
+.cards.cards25 > ul > li {
+  position: relative;
+  border: none;
+  border-radius: 22px;
+  box-shadow: 0 4px 24px rgb(0 0 0 / 13%);
+  overflow: hidden;
+  min-width: 0;
+  background: transparent;
+  display: flex;
+  align-items: stretch;
+  padding: 0;
+}
+
+/* IMAGE BACKGROUND */
+.cards.cards25 > ul > li .cards-card-image {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  line-height: 0;
+  background: none;
+  opacity: 1;
+  pointer-events: none;
+}
+
+.cards.cards25 > ul > li .cards-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 22px;
+  display: block;
+  opacity: 1;
+  background: transparent;
+}
+
+/* TEXT OVERLAY */
+.cards.cards25 > ul > li .cards-card-body {
+  position: absolute;
+  top: 24px;
+  left: 20px;
+  right: 20px;
+  z-index: 2;
+  color: #fff;
+  text-shadow: 0 2px 10px #000, 0 0 1px #000;
+  background: none;
+  margin: 0;
+  max-width: 94%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  pointer-events: none;
+}
+
+.cards.cards25 > ul > li .cards-card-body h3 {
+  font-family: Syncopate, 'Syncopate Fallback', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 0.025em;
+  color: #fff;
+  margin: 0 0 10px;
+  line-height: 1.1;
+  max-width: 100%;
+  overflow-wrap: break-word;
+  text-shadow: 0 2px 10px #000, 0 0 2px #000;
+}
+
+.cards.cards25 > ul > li .cards-card-body p {
+  font-family: var(--body-font-family);
+  font-size: 0.98rem;
+  margin: 0;
+  color: #fff;
+  font-weight: 400;
+  line-height: 1.37;
+  max-width: 100%;
+  overflow-wrap: break-word;
+  text-shadow: 0 2px 8px #000, 0 0 1px #000;
+}
+
+/* GRID POSITIONING */
+.cards.cards25 > ul > li:nth-child(1) { /* Tennis court cool */
+  grid-column: 1;
+  grid-row: 1;
+  min-height: 210px;
+}
+
+.cards.cards25 > ul > li:nth-child(2) { /* Beach day energy */
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+.cards.cards25 > ul > li:nth-child(3) { /* Middle left card */
+  grid-column: 1;
+  grid-row: 2;
+  min-height: 180px;
+}
+
+.cards.cards25 > ul > li:nth-child(4) { /* Night out sparkle (bottom left) */
+  grid-column: 1;
+  grid-row: 3;
+  min-height: 152px;
+  max-height: 170px;
+  margin-right: 0;
+}
+
+/* --- BOTTOM RIGHT CARDS: FLEXBOX INSIDE GRID --- */
+
+/* Both bottom-right cards occupy the same grid cell. Position side-by-side using float/flex. */
+.cards.cards25 > ul > li:nth-child(5),
+.cards.cards25 > ul > li:nth-child(6) {
+  grid-column: 2;
+  grid-row: 3;
+  min-height: 152px;
+  max-height: 170px;
+  width: 48%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  float: left;
+}
+
+.cards.cards25 > ul > li:nth-child(5) {
+  margin-right: 4%;
+}
+
+.cards.cards25 > ul > li:nth-child(6) {
+  margin-right: 0;
+}
+
+/* Clear floats for bottom row after the two bottom-right cards */
+.cards.cards25 > ul::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive: stack cards vertically on small screens */
+@media (width <= 900px) {
+  .cards.cards25 > ul {
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+    gap: 10px;
+  }
+
+  .cards.cards25 > ul > li,
+  .cards.cards25 > ul > li:nth-child(5),
+  .cards.cards25 > ul > li:nth-child(6) {
+    grid-column: 1 !important;
+    grid-row: auto !important;
+    width: 100%;
+    min-height: 115px;
+    max-height: none;
+    margin-right: 0;
+    display: flex;
+    float: none;
+  }
+
+  .cards.cards25 > ul > li .cards-card-body {
+    top: 14px;
+    left: 10px;
+    right: 10px;
+    max-width: 98%;
+  }
+
+  .cards.cards25 > ul > li .cards-card-body h3 {
+    font-size: 1.05rem;
+  }
+
+  .cards.cards25 > ul > li .cards-card-body p {
+    font-size: 0.87rem;
   }
 }
