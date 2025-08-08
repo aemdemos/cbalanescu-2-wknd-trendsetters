@@ -1813,8 +1813,6 @@
 
 .columns.columns32 {
   background: #fff;
-
-  /* Move block higher and reduce empty space top/bottom */
   padding-top: 2.5rem;
   padding-bottom: 2.5rem;
 }
@@ -1822,7 +1820,7 @@
 .columns.columns32 > div {
   display: flex;
   flex-direction: row;
-  align-items: center; /* Center image/text group vertically */
+  align-items: center;
   justify-content: center;
   gap: 4rem;
   max-width: 1100px;
@@ -1831,7 +1829,6 @@
   min-height: 440px;
 }
 
-/* Image column */
 .columns.columns32 .columns-img-col {
   display: flex;
   align-items: center;
@@ -1852,22 +1849,18 @@
   display: block;
 }
 
-/* --- TEXT COLUMN --- */
 .columns.columns32 > div > div:last-child {
   display: flex;
   flex-direction: column;
-  justify-content: center;   /* Center headline/subhead/metadata vertically */
-  align-items: flex-start;   /* Left align headline/subhead/metadata */
+  justify-content: center;
+  align-items: flex-start;
   max-width: 520px;
   width: 100%;
   padding-left: 0;
   min-height: 340px;
-
-  /* Center block with respect to image */
   align-self: center;
 }
 
-/* Subheading + badge row */
 .columns.columns32 > div > div:last-child .columns32-subrow {
   display: flex;
   flex-direction: row;
@@ -1897,10 +1890,9 @@
   border-radius: 999px;
   padding: 0.2em 1em;
   vertical-align: middle;
-  margin-bottom: 2.2em; /* Increase space below badge */
+  margin-bottom: 2.2em;
 }
 
-/* Headline */
 .columns.columns32 > div > div:last-child > h2 {
   font-family: var(--heading-font-family);
   font-size: clamp(2.2rem, 4vw, 3rem);
@@ -1912,7 +1904,6 @@
   line-height: 1.1;
 }
 
-/* Inline metadata row */
 .columns.columns32 > div > div:last-child > p:nth-child(n+4) {
   display: inline-block;
   font-size: 14px;
@@ -1928,7 +1919,6 @@
   margin: 0 0.75em;
 }
 
-/* Responsive adjustments */
 @media (width <= 900px) {
   .columns.columns32 {
     padding-top: 1.2rem;
@@ -1959,5 +1949,192 @@
 
   .columns.columns32 > div > div:last-child > h2 {
     margin-bottom: 1.2rem;
+  }
+}
+
+
+.columns.columns36 {
+  background: #f8f8f4;
+  padding: 0;
+}
+
+/* Main two-column layout: flex row, top aligned, with tighter gap */
+.columns.columns36 > div {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 2vw;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  min-height: 0;
+  padding-top: 3vw;
+  padding-bottom: 3vw;
+}
+
+/* Left column: make stacking denser and button container visually connected to paragraph */
+.columns.columns36 > div > div:first-child {
+  flex: 0 1 43%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 0.7vw; /* tighter vertical rhythm */
+  padding-left: 0.5vw;
+  align-items: flex-start;
+}
+
+/* Heading */
+.columns.columns36 h1 {
+  font-family: var(--heading-font-family);
+  font-size: clamp(2.2rem, 4vw, var(--heading-font-size-xxl));
+  font-weight: 400;
+  color: #181818;
+  line-height: 1.05;
+  margin: 0 0 0.8vw;
+  letter-spacing: 0.01em;
+}
+
+/* Paragraph */
+.columns.columns36 p {
+  font-size: clamp(1rem, 1vw, var(--body-font-size-m));
+  color: #6d6d6d;
+  margin: 0 0 0.6vw; /* less margin for tighter stacking */
+  max-width: 35vw;
+}
+
+/* Button container: allow for two buttons side by side, make button(s) visually anchored */
+.columns.columns36 .button-container {
+  display: flex;
+  flex-direction: row;
+  gap: 1vw;
+  margin: 0.2vw 0 0; /* keep buttons close to paragraph */
+  padding: 0;
+}
+
+/* Button style: pill-shaped, strong border, visually clear for two buttons */
+.columns.columns36 .button {
+  background: #fff;
+  color: #181818;
+  border: 1px solid #181818;
+  border-radius: 999px;
+  font-size: 1vw;
+  padding: 0.7vw 2vw;
+  text-decoration: none;
+  font-family: inherit;
+  font-weight: 500;
+  box-shadow: none;
+  margin: 0;
+  transition: box-shadow 0.2s;
+  line-height: 1.35;
+  min-width: 7vw;
+
+  /* If only one button is present, it will still center and anchor visually */
+}
+
+/* Button hover/focus */
+.columns.columns36 .button:hover, 
+.columns.columns36 .button:focus {
+  box-shadow: 0 2px 12px rgb(24 24 24 / 7%);
+  background: #f8f8f4;
+  color: #181818;
+}
+
+/* Right column: image cards row */
+.columns.columns36 .columns-img-col {
+  flex: 0 1 57%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin: 0;
+  padding: 0;
+}
+
+/* Image row: cards side by side, even spacing */
+.columns.columns36 .columns-img-col > p {
+  display: flex;
+  flex-direction: row;
+  gap: 2vw;
+  margin: 0;
+  padding: 0;
+}
+
+/* Card sizing: aspect ratio closer to original, slight width increase */
+.columns.columns36 .columns-img-col picture {
+  display: block;
+  width: 20vw;
+  min-width: 220px;
+  max-width: 380px;
+  height: 25vw;
+  min-height: 220px;
+  max-height: 430px;
+  border-radius: 2vw;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgb(24 24 24 / 6%);
+  background: #fff;
+}
+
+.columns.columns36 .columns-img-col img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 2vw;
+  display: block;
+  background: #fff;
+}
+
+/* Responsive adjustments for mobile/tablet */
+@media (width <= 900px) {
+  .columns.columns36 > div {
+    flex-direction: column;
+    gap: 3vw;
+    max-width: 95vw;
+    padding-top: 5vw;
+    padding-bottom: 2vw;
+  }
+
+  .columns.columns36 > div > div:first-child {
+    flex-basis: auto;
+    max-width: 100%;
+    padding-left: 0;
+    gap: 2vw;
+  }
+
+  .columns.columns36 .button-container {
+    gap: 2vw;
+  }
+
+  .columns.columns36 .columns-img-col {
+    width: 100%;
+    margin-top: 2vw;
+    justify-content: center;
+  }
+
+  .columns.columns36 .columns-img-col > p {
+    gap: 2vw;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .columns.columns36 .columns-img-col picture {
+    width: 33vw;
+    height: 42vw;
+    min-width: 120px;
+    min-height: 120px;
+    border-radius: 4vw;
+  }
+}
+
+@media (width <= 600px) {
+  .columns.columns36 h1 {
+    font-size: clamp(1.4rem, 8vw, var(--heading-font-size-xl));
+  }
+
+  .columns.columns36 .columns-img-col picture {
+    width: 80vw;
+    height: 32vw;
+    min-width: 100px;
+    min-height: 100px;
+    border-radius: 6vw;
   }
 }
