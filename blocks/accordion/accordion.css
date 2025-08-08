@@ -67,7 +67,6 @@
   padding: 0;
 }
 
-/* Ensure details uses full width and is row flex container */
 .accordion.accordion13 details {
   display: flex;
   flex-direction: row;
@@ -83,12 +82,10 @@
   border-bottom: 1px solid #bfbfbf;
 }
 
-/* Remove border from last row */
 .accordion.accordion13 details:last-child {
   border-bottom: none;
 }
 
-/* Left column: summary */
 .accordion.accordion13 summary {
   display: flex;
   align-items: center;
@@ -107,14 +104,12 @@
   white-space: normal;
 }
 
-/* Remove marker/arrow from summary */
 .accordion.accordion13 summary::-webkit-details-marker,
 .accordion.accordion13 summary::marker,
 .accordion.accordion13 summary::after {
   display: none;
 }
 
-/* Question text styling */
 .accordion.accordion13 summary p {
   text-transform: uppercase;
   font-family: Orbitron, Arial, sans-serif;
@@ -128,7 +123,6 @@
   word-break: break-all;
 }
 
-/* Right column: answer */
 .accordion.accordion13 .accordion-item-body {
   display: flex;
   align-items: center;
@@ -139,15 +133,12 @@
   margin: 0;
   border: none;
   background: none;
-
-  /* Make sure it doesn't collapse if empty, and is always visible if present */
   height: auto;
   max-height: unset;
   visibility: visible;
   opacity: 1;
 }
 
-/* Answer text styling */
 .accordion.accordion13 .accordion-item-body p {
   color: #2d2d2d;
   font-size: 13px;
@@ -159,7 +150,6 @@
   word-break: break-all;
 }
 
-/* Remove any top border/background from answer body if inherited */
 .accordion.accordion13 details[open] .accordion-item-body,
 .accordion.accordion13 .accordion-item-body {
   border-top: none;
@@ -168,7 +158,6 @@
   padding-bottom: 0;
 }
 
-/* Responsive stacking on mobile */
 @media (width <= 700px) {
   .accordion.accordion13 details {
     flex-direction: column;
@@ -190,4 +179,71 @@
   .accordion.accordion13 .accordion-item-body p {
     font-size: 12px;
   }
+}
+
+
+.accordion.accordion34 {
+  background: #fafafa;
+  border-radius: 0;
+  padding: 0;
+  width: 100%;
+  max-width: none;
+  box-sizing: border-box;
+}
+
+.accordion.accordion34 details {
+  border: none;
+  margin: 0;
+  background: transparent;
+}
+
+.accordion.accordion34 details:not(:first-child) {
+  border-top: 1px solid #e0e0e0;
+}
+
+.accordion.accordion34 summary {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  min-height: 48px;
+  padding: 0 14px;
+  background: transparent;
+  outline: none;
+  cursor: pointer;
+  list-style: none;
+  border: none;
+  font-family: var(--body-font-family);
+  font-size: 14px;
+  color: #333;
+  transition: background-color 0.2s;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.accordion.accordion34 summary::-webkit-details-marker {
+  display: none;
+}
+
+.accordion.accordion34 .accordion-item-label {
+  display: flex;
+  flex: 1 1 auto;
+  align-items: center;
+}
+
+.accordion.accordion34 .accordion-item-label p {
+  margin: 0;
+  color: #333;
+  font-size: 14px;
+  font-family: var(--body-font-family);
+  line-height: 1.7;
+  flex: 1 1 auto;
+}
+
+.accordion.accordion34 .accordion-item-body {
+  padding: 0 14px 12px;
+  background: transparent;
+  font-size: 14px;
+  color: #333;
+  box-sizing: border-box;
 }
