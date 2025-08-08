@@ -1958,7 +1958,6 @@
   padding: 0;
 }
 
-/* Main two-column layout: flex row, top aligned, with tighter gap */
 .columns.columns36 > div {
   display: flex;
   flex-direction: row;
@@ -1973,18 +1972,16 @@
   padding-bottom: 3vw;
 }
 
-/* Left column: make stacking denser and button container visually connected to paragraph */
 .columns.columns36 > div > div:first-child {
   flex: 0 1 43%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  gap: 0.7vw; /* tighter vertical rhythm */
+  gap: 0.7vw;
   padding-left: 0.5vw;
   align-items: flex-start;
 }
 
-/* Heading */
 .columns.columns36 h1 {
   font-family: var(--heading-font-family);
   font-size: clamp(2.2rem, 4vw, var(--heading-font-size-xxl));
@@ -1995,24 +1992,21 @@
   letter-spacing: 0.01em;
 }
 
-/* Paragraph */
 .columns.columns36 p {
   font-size: clamp(1rem, 1vw, var(--body-font-size-m));
   color: #6d6d6d;
-  margin: 0 0 0.6vw; /* less margin for tighter stacking */
+  margin: 0 0 0.6vw;
   max-width: 35vw;
 }
 
-/* Button container: allow for two buttons side by side, make button(s) visually anchored */
 .columns.columns36 .button-container {
   display: flex;
   flex-direction: row;
   gap: 1vw;
-  margin: 0.2vw 0 0; /* keep buttons close to paragraph */
+  margin: 0.2vw 0 0;
   padding: 0;
 }
 
-/* Button style: pill-shaped, strong border, visually clear for two buttons */
 .columns.columns36 .button {
   background: #fff;
   color: #181818;
@@ -2028,11 +2022,8 @@
   transition: box-shadow 0.2s;
   line-height: 1.35;
   min-width: 7vw;
-
-  /* If only one button is present, it will still center and anchor visually */
 }
 
-/* Button hover/focus */
 .columns.columns36 .button:hover, 
 .columns.columns36 .button:focus {
   box-shadow: 0 2px 12px rgb(24 24 24 / 7%);
@@ -2040,7 +2031,6 @@
   color: #181818;
 }
 
-/* Right column: image cards row */
 .columns.columns36 .columns-img-col {
   flex: 0 1 57%;
   display: flex;
@@ -2050,7 +2040,6 @@
   padding: 0;
 }
 
-/* Image row: cards side by side, even spacing */
 .columns.columns36 .columns-img-col > p {
   display: flex;
   flex-direction: row;
@@ -2059,7 +2048,6 @@
   padding: 0;
 }
 
-/* Card sizing: aspect ratio closer to original, slight width increase */
 .columns.columns36 .columns-img-col picture {
   display: block;
   width: 20vw;
@@ -2083,7 +2071,6 @@
   background: #fff;
 }
 
-/* Responsive adjustments for mobile/tablet */
 @media (width <= 900px) {
   .columns.columns36 > div {
     flex-direction: column;
@@ -2136,5 +2123,70 @@
     min-width: 100px;
     min-height: 100px;
     border-radius: 6vw;
+  }
+}
+
+
+.columns.columns38 {
+  background: #fff;
+  padding: 0;
+}
+
+/* Main row: flexbox for side-by-side cards */
+.columns.columns38 > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+  gap: 2.1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  min-height: 1px;
+}
+
+/* Side cards: slightly narrower */
+.columns.columns38 > div > .columns-img-col {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  min-width: 0;
+  max-width: none;
+  height: 340px;
+  flex: 0.93 1 0;
+  transition: flex-basis 0.2s;
+}
+
+/* Center card: noticeably larger */
+.columns.columns38 > div > .columns-img-col:nth-child(2) {
+  flex: 1.65 1 0;
+}
+
+/* Image fills card, rounded corners */
+.columns.columns38 .columns-img-col picture,
+.columns.columns38 .columns-img-col img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.columns.columns38 .columns-img-col img {
+  object-fit: cover;
+  border-radius: 24px;
+  background: #f8f8f8;
+  aspect-ratio: unset;
+}
+
+/* Responsive: stack vertically and shrink height */
+@media (width <= 900px) {
+  .columns.columns38 > div {
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 95vw;
+  }
+
+  .columns.columns38 > div > .columns-img-col {
+    height: 180px;
+    flex: 1 1 0;
   }
 }
