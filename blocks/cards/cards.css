@@ -390,7 +390,7 @@
 
 
 .cards.cards19 {
-  max-width: 1250px; /* allows for more horizontal space, less wrapping */
+  max-width: 1250px;
   margin-left: auto;
   margin-right: auto;
   padding: 0;
@@ -398,12 +398,11 @@
   border: none;
 }
 
-/* Main grid: 4 columns, wider horizontal gap for airy layout */
 .cards.cards19 > ul {
   display: grid;
-  grid-template-columns: repeat(4, minmax(230px, 1fr)); /* slightly wider columns */
+  grid-template-columns: repeat(4, minmax(230px, 1fr));
   grid-template-rows: repeat(2, auto);
-  gap: 22px 64px; /* tighter row gap for compactness, wider column gap for airiness */
+  gap: 22px 64px;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -411,7 +410,6 @@
   background: none;
 }
 
-/* Responsive: 2 columns below 1100px, 1 column below 700px */
 @media (width <= 1100px) {
   .cards.cards19 {
     max-width: 100vw;
@@ -432,7 +430,6 @@
   }
 }
 
-/* Card: flex row, left alignment, no extra padding */
 .cards.cards19 > ul > li {
   display: flex;
   flex-direction: row;
@@ -445,7 +442,6 @@
   box-sizing: border-box;
 }
 
-/* Icon: left, vertically centered, slightly more gap */
 .cards.cards19 .cards-card-image {
   width: 22px;
   min-width: 22px;
@@ -458,7 +454,6 @@
   background: none;
 }
 
-/* Image inside icon container */
 .cards.cards19 .cards-card-image img {
   width: 18px;
   height: 18px;
@@ -472,7 +467,6 @@
   border: none;
 }
 
-/* Card body/text block */
 .cards.cards19 .cards-card-body {
   margin: 0;
   padding: 0;
@@ -482,18 +476,149 @@
   border: none;
 }
 
-/* Text: compact line height, no extra margin */
 .cards.cards19 .cards-card-body p {
   color: #393939;
   font-size: 13px;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 400;
   margin: 0;
-  line-height: 1.2; /* more compact for better block proportions */
+  line-height: 1.2;
   text-align: left;
   background: none;
   border: none;
-  word-break: normal; /* Replacing deprecated 'break-word' with valid alternative */
+  word-break: normal;
   overflow-wrap: break-word;
   hyphens: auto;
+}
+
+
+.cards.cards21 {
+  width: 100%;
+  background: transparent;
+}
+
+/* Use grid, but ensure card aligns flush top/left with zero spacing */
+.cards.cards21 > ul {
+  display: grid;
+  grid-template-columns: 1fr;
+  place-items: start start;
+  margin: 0;
+  padding: 0;
+  grid-gap: 0;
+  min-height: 520px;
+}
+
+/* Card container: flush with top/left, sized for collage */
+.cards.cards21 > ul > li {
+  position: relative;
+  min-width: 500px;
+  min-height: 570px;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  overflow: visible;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+/* Main image: dramatic rotation, fully flush top/left, larger for visual impact */
+.cards.cards21 .cards-card-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 480px;
+  height: 560px;
+  z-index: 1;
+  transform: rotate(-16deg);
+  box-shadow: 0 14px 40px rgb(30 30 30 / 19%);
+  border: 2px solid #222;
+  border-radius: 22px;
+  background: #fff;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+/* Ensure image fills its block */
+.cards.cards21 .cards-card-image img,
+.cards.cards21 .cards-card-image picture {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Note card overlay: much more overlap, bigger, offset further down and left */
+.cards.cards21 .cards-card-body {
+  position: absolute;
+  left: -18px;
+  top: 410px;
+  width: 336px;
+  min-height: 146px;
+  background: #F8F8F5;
+  border: 2.5px solid #232323;
+  border-radius: 18px;
+  z-index: 2;
+  box-shadow: 0 14px 40px rgb(20 20 20 / 18%);
+  transform: rotate(23deg);
+  display: flex;
+  align-items: center;
+  padding: 36px 30px;
+  margin: 0;
+}
+
+/* Text styling inside the card overlay */
+.cards.cards21 .cards-card-body p {
+  color: #2D2D2D;
+  font-size: 1.23rem;
+  font-family: Montserrat, Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin: 0;
+  transform: rotate(-6deg);
+  line-height: 1.32;
+}
+
+/* Hand-drawn style accent border for collage effect, lighter/sketchier */
+.cards.cards21 .cards-card-image::before {
+  display: block;
+  position: absolute;
+  inset: 38px 22px 32px 28px;
+  border: 1.1px dashed #232323;
+  border-radius: 26px;
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: 5;
+  content: "";
+}
+
+/* Responsive tweaks for small screens */
+@media (width <= 700px) {
+  .cards.cards21 > ul > li {
+    min-width: 0;
+    min-height: 75vw;
+    max-width: 100vw;
+  }
+
+  .cards.cards21 .cards-card-image {
+    width: 99vw;
+    height: 69vw;
+    min-width: 0;
+    left: 0;
+    top: 0;
+    border-radius: 13px;
+  }
+
+  .cards.cards21 .cards-card-body {
+    left: -6vw;
+    top: 45vw;
+    width: 86vw;
+    min-height: 82px;
+    border-radius: 13px;
+    padding: 18px 8px;
+  }
 }
