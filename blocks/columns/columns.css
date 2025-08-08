@@ -2132,7 +2132,6 @@
   padding: 0;
 }
 
-/* Main row: flexbox for side-by-side cards */
 .columns.columns38 > div {
   display: flex;
   flex-direction: row;
@@ -2145,7 +2144,6 @@
   min-height: 1px;
 }
 
-/* Side cards: slightly narrower */
 .columns.columns38 > div > .columns-img-col {
   display: flex;
   align-items: stretch;
@@ -2157,12 +2155,10 @@
   transition: flex-basis 0.2s;
 }
 
-/* Center card: noticeably larger */
 .columns.columns38 > div > .columns-img-col:nth-child(2) {
   flex: 1.65 1 0;
 }
 
-/* Image fills card, rounded corners */
 .columns.columns38 .columns-img-col picture,
 .columns.columns38 .columns-img-col img {
   width: 100%;
@@ -2177,7 +2173,6 @@
   aspect-ratio: unset;
 }
 
-/* Responsive: stack vertically and shrink height */
 @media (width <= 900px) {
   .columns.columns38 > div {
     flex-direction: column;
@@ -2188,5 +2183,141 @@
   .columns.columns38 > div > .columns-img-col {
     height: 180px;
     flex: 1 1 0;
+  }
+}
+
+
+.columns.columns3 {
+  /* Two columns side by side, vertically centered */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  padding: 50px 80px 36px;
+  width: 100%;
+  min-height: 0;
+  box-sizing: border-box;
+}
+
+/* Responsive: stack columns vertically on small screens */
+@media (width <= 900px) {
+  .columns.columns3 {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 28px 16px 18px;
+  }
+}
+
+.columns.columns3 > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;  /* center both columns vertically */
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 8vw;
+}
+
+@media (width <= 900px) {
+  .columns.columns3 > div {
+    flex-direction: column;
+    gap: 2.2rem;
+    align-items: stretch;
+    max-width: 100vw;
+  }
+}
+
+.columns.columns3 > div > div:first-child {
+  flex: 1 1 64%;
+  max-width: 720px;
+  min-width: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  box-sizing: border-box;
+}
+
+.columns.columns3 h2 {
+  font-family: var(--heading-font-family);
+  font-size: 2.3rem;
+  font-weight: 500;
+  color: #000;
+  margin-bottom: 0.6rem;
+  letter-spacing: 0.03em;
+  line-height: 1.1;
+  text-align: left;
+}
+
+.columns.columns3 h2 + p {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #505050;
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+  line-height: 1.56;
+  text-align: left;
+  max-width: 700px;
+}
+
+/* Button stack, align vertically centered with left column */
+.columns.columns3 > div > div:last-child {
+  flex: 1 1 24%;
+  min-width: 230px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0; /* eliminate extra top margin */
+}
+
+/* Stack links vertically and center, with tight gap */
+.columns.columns3 > div > div:last-child p {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+}
+
+.columns.columns3 > div > div:last-child a {
+  display: block;
+  width: 220px;
+  height: 40px;
+  line-height: 40px;
+  border: 1px solid #000;
+  border-radius: 999px;
+  background: #fff;
+  font-family: var(--heading-font-family);
+  font-size: 1.12rem;
+  font-weight: 400;
+  color: #000;
+  text-align: center;
+  text-decoration: none;
+  margin: 0;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  position: relative;
+  transition: box-shadow 0.2s, background 0.2s, color 0.2s;
+  box-sizing: border-box;
+}
+
+.columns.columns3 > div > div:last-child a:first-child {
+  box-shadow: 0 -2px 0 0 #f1ff4d inset;
+}
+
+.columns.columns3 > div > div:last-child a:hover,
+.columns.columns3 > div > div:last-child a:focus {
+  background: #f1ff4d20;
+  color: #000;
+}
+
+@media (width <= 600px) {
+  .columns.columns3 > div > div:last-child a {
+    width: 100%;
+    min-width: 140px;
+    font-size: 1rem;
   }
 }
