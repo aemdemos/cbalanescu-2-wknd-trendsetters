@@ -1741,18 +1741,16 @@
   padding: 8px 0;
 }
 
-/* Main row: flex, balanced side-by-side layout, vertically centered */
 .columns.columns31 > div {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 32px; /* reduced gap for more room for text */
-  max-width: 1400px; /* increased max-width for more horizontal space */
+  gap: 32px;
+  max-width: 1400px;
   margin: 0 auto;
   width: 100%;
 }
 
-/* Let text columns take up more space, keep button compact */
 .columns.columns31 > div > div:nth-child(1),
 .columns.columns31 > div > div:nth-child(2) {
   flex: 1 1 48%;
@@ -1776,7 +1774,6 @@
   align-items: center;
 }
 
-/* Button styling */
 .columns.columns31 .button-container .button {
   position: relative;
   display: inline-block;
@@ -1796,7 +1793,6 @@
   box-shadow: 0 3px 0 0 #f7f37e;
 }
 
-/* Responsive: stack vertically on small screens */
 @media (width <= 900px) {
   .columns.columns31 > div {
     flex-direction: column;
@@ -1811,5 +1807,157 @@
 
   .columns.columns31 > div > div:nth-child(3) {
     justify-content: flex-start;
+  }
+}
+
+
+.columns.columns32 {
+  background: #fff;
+
+  /* Move block higher and reduce empty space top/bottom */
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
+.columns.columns32 > div {
+  display: flex;
+  flex-direction: row;
+  align-items: center; /* Center image/text group vertically */
+  justify-content: center;
+  gap: 4rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 100%;
+  min-height: 440px;
+}
+
+/* Image column */
+.columns.columns32 .columns-img-col {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 480px;
+  min-width: 340px;
+  width: 100%;
+}
+
+.columns.columns32 .columns-img-col img {
+  aspect-ratio: 4/3;
+  width: 100%;
+  max-width: 440px;
+  border-radius: 24px;
+  object-fit: cover;
+  background: var(--light-color);
+  box-shadow: none;
+  display: block;
+}
+
+/* --- TEXT COLUMN --- */
+.columns.columns32 > div > div:last-child {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;   /* Center headline/subhead/metadata vertically */
+  align-items: flex-start;   /* Left align headline/subhead/metadata */
+  max-width: 520px;
+  width: 100%;
+  padding-left: 0;
+  min-height: 340px;
+
+  /* Center block with respect to image */
+  align-self: center;
+}
+
+/* Subheading + badge row */
+.columns.columns32 > div > div:last-child .columns32-subrow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.75em;
+  margin-bottom: 2.2em;
+}
+
+.columns.columns32 > div > div:last-child > p:first-child,
+.columns.columns32 > div > div:last-child > p:nth-child(2) {
+  margin: 0;
+}
+
+.columns.columns32 > div > div:last-child > p:first-child {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: #787878;
+  font-weight: 500;
+}
+
+.columns.columns32 > div > div:last-child > p:nth-child(2) {
+  background: #f1f1f1;
+  color: #595959;
+  font-size: 12px;
+  font-weight: 500;
+  border-radius: 999px;
+  padding: 0.2em 1em;
+  vertical-align: middle;
+  margin-bottom: 2.2em; /* Increase space below badge */
+}
+
+/* Headline */
+.columns.columns32 > div > div:last-child > h2 {
+  font-family: var(--heading-font-family);
+  font-size: clamp(2.2rem, 4vw, 3rem);
+  font-weight: 500;
+  color: #141414;
+  letter-spacing: 0.02em;
+  margin-top: 0;
+  margin-bottom: 2rem;
+  line-height: 1.1;
+}
+
+/* Inline metadata row */
+.columns.columns32 > div > div:last-child > p:nth-child(n+4) {
+  display: inline-block;
+  font-size: 14px;
+  color: #A5A5A5;
+  font-weight: 400;
+  margin: 0;
+  vertical-align: middle;
+  line-height: 1.5;
+}
+
+.columns.columns32 > div > div:last-child > p:nth-child(5),
+.columns.columns32 > div > div:last-child > p:nth-child(7) {
+  margin: 0 0.75em;
+}
+
+/* Responsive adjustments */
+@media (width <= 900px) {
+  .columns.columns32 {
+    padding-top: 1.2rem;
+    padding-bottom: 1.2rem;
+  }
+
+  .columns.columns32 > div {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 2rem;
+    max-width: 95vw;
+    min-height: 0;
+  }
+
+  .columns.columns32 .columns-img-col,
+  .columns.columns32 .columns-img-col img {
+    max-width: 100%;
+    min-width: 0;
+    width: 100%;
+  }
+
+  .columns.columns32 > div > div:last-child {
+    max-width: 100%;
+    padding-left: 0;
+    min-height: 0;
+    align-self: unset;
+  }
+
+  .columns.columns32 > div > div:last-child > h2 {
+    margin-bottom: 1.2rem;
   }
 }
