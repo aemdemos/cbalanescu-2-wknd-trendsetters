@@ -1,3 +1,4 @@
+/* stylelint-disable no-descending-specificity */
 .cards > ul {
   list-style: none;
   margin: 0;
@@ -24,4 +25,209 @@
   width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
+}
+
+
+.cards.cards2 {
+  padding: 32px 0;
+  max-width: 1200px;
+  margin: 0 auto;
+  background: #fff;
+}
+
+/* Two columns: left slightly wider for hero card dominance */
+.cards.cards2 > ul {
+  display: grid;
+  grid-template-columns: 1.13fr 0.87fr;
+  gap: 40px;
+  align-items: start;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+/* Hero card: left column, align to top, allow vertical expansion */
+.cards.cards2 > ul > li:first-child {
+  grid-column: 1;
+  grid-row: 1 / span 8;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 0;
+  border: none;
+  max-width: none;
+  height: 100%;
+  justify-content: flex-start;
+
+  /* Add bottom padding to visually balance columns */
+  padding-bottom: 30px;
+}
+
+/* Hero image: large and rounded */
+.cards.cards2 > ul > li:first-child .cards-card-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 18px;
+  display: block;
+}
+
+/* Hero card body: allow flex vertical fill */
+.cards.cards2 > ul > li:first-child .cards-card-body {
+  margin: 0;
+  padding: 0;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* Hero card label: tighter pill styling */
+.cards.cards2 > ul > li:first-child .cards-card-body > p:first-child {
+  display: inline-block;
+  background: #f3f3f3;
+  color: #444;
+  font-size: 0.77rem;
+  border-radius: 9px;
+  padding: 0.08em 0.7em;
+  letter-spacing: 0.07em;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-bottom: 0.45em;
+}
+
+/* Hero card headline */
+.cards.cards2 > ul > li:first-child .cards-card-body > h3 {
+  font-family: var(--heading-font-family);
+  font-size: 2.08rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: #111;
+  margin: 0 0 0.3em;
+  line-height: 1.02;
+}
+
+/* Hero card subtext */
+.cards.cards2 > ul > li:first-child .cards-card-body > p:not(:first-child) {
+  color: #333;
+  font-size: 1.01rem;
+  margin: 0;
+}
+
+/* Right column: stack cards tightly with flexbox */
+.cards.cards2 > ul > li:not(:first-child) {
+  grid-column: 2;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  border: none;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 0;
+}
+
+/* Tighter vertical spacing for right column .cards-card-body */
+.cards.cards2 > ul > li:not(:first-child) .cards-card-body {
+  margin: 0.09rem 0;
+  padding: 0;
+}
+
+/* Only show image for the second card in right column */
+.cards.cards2 > ul > li:not(:first-child, :nth-child(2)) .cards-card-image {
+  display: none;
+}
+
+.cards.cards2 > ul > li:nth-child(2) .cards-card-image img {
+  width: 100%;
+  max-width: 220px;
+  border-radius: 12px;
+  margin-bottom: 0.37rem;
+  display: block;
+}
+
+/* Label for right column cards: compact pill, small font */
+.cards.cards2 > ul > li:not(:first-child) .cards-card-body > p:first-child {
+  display: inline-block;
+  background: #f3f3f3;
+  color: #444;
+  font-size: 0.65rem;
+  border-radius: 8px;
+  padding: 0.06em 0.6em;
+  letter-spacing: 0.07em;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-bottom: 0.19em;
+}
+
+/* Headline for right column cards */
+.cards.cards2 > ul > li:not(:first-child) .cards-card-body > h3 {
+  font-size: 0.98rem;
+  font-weight: 600;
+  margin-bottom: 0.15em;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  color: #111;
+  line-height: 1.1;
+}
+
+/* Subtext for right column cards */
+.cards.cards2 > ul > li:not(:first-child) .cards-card-body > p:not(:first-child) {
+  color: #333;
+  font-size: 0.97rem;
+  margin: 0;
+}
+
+/* Add divider between right column cards, full width */
+.cards.cards2 > ul > li:not(:first-child, :last-child) {
+  border-bottom: 1px solid #e2e2e2;
+}
+
+/* Remove margin from all .cards-card-body globally in block */
+.cards.cards2 .cards-card-body {
+  margin: 0;
+}
+
+/* Remove border and background from all cards */
+.cards.cards2 > ul > li {
+  border: none;
+  background: transparent;
+}
+
+/* Remove default ul spacing and bullets inside block */
+
+/* Responsive: stack columns on mobile */
+@media (width <= 900px) {
+  .cards.cards2 > ul {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .cards.cards2 > ul > li,
+  .cards.cards2 > ul > li:first-child,
+  .cards.cards2 > ul > li:not(:first-child) {
+    max-width: 100%;
+    grid-column: 1;
+  }
+
+  .cards.cards2 > ul > li:not(:first-child) .cards-card-body {
+    margin: 0.15rem 0;
+  }
+
+  .cards.cards2 > ul > li:not(:first-child, :last-child) {
+    border-bottom: 1px solid #e2e2e2;
+  }
+}
+
+/* Ensure images never overflow their card or cause layout breakage */
+.cards.cards2 img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Remove grid-row assignments for right column cards on small screens */
+@media (width <= 900px) {
+  .cards.cards2 > ul > li {
+    grid-row: auto;
+  }
 }
