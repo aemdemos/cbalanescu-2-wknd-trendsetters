@@ -1167,10 +1167,9 @@
   padding: 0;
 }
 
-/* Two column grid layout */
 .columns.columns26 > div {
   display: grid;
-  grid-template-columns: 1.2fr 0.8fr; /* right column slightly wider for logo/text */
+  grid-template-columns: 1.2fr 0.8fr;
   max-width: 1100px;
   margin: 0 auto;
   min-height: 440px;
@@ -1180,7 +1179,6 @@
   column-gap: 0;
 }
 
-/* LEFT COLUMN: Stack vertically, align to top */
 .columns.columns26 > div > div:first-child {
   display: flex;
   flex-direction: column;
@@ -1192,7 +1190,6 @@
   grid-column: 1;
 }
 
-/* Heading styles */
 .columns.columns26 > div > div:first-child > p:first-child {
   font-family: var(--heading-font-family);
   font-size: 2.7rem;
@@ -1203,7 +1200,6 @@
   margin: 0 0 24px;
 }
 
-/* Testimonial paragraph */
 .columns.columns26 > div > div:first-child > p:nth-child(2) {
   font-family: var(--body-font-family);
   font-size: 1.09rem;
@@ -1214,7 +1210,6 @@
   position: relative;
 }
 
-/* Divider after testimonial */
 .columns.columns26 > div > div:first-child > p:nth-child(2)::after {
   display: block;
   width: 100%;
@@ -1224,7 +1219,6 @@
   content: "";
 }
 
-/* Avatar/name/role horizontal row below divider */
 .columns.columns26 > div > div:first-child > .columns-avatar-row,
 .columns.columns26 > div > div:first-child > p:nth-child(3),
 .columns.columns26 > div > div:first-child > p:nth-child(4),
@@ -1233,7 +1227,6 @@
   padding: 0;
 }
 
-/* Flex row for avatar/name/role */
 .columns.columns26 > div > div:first-child .columns-avatar-row,
 .columns.columns26 > div > div:first-child > .columns-avatar-row {
   display: flex;
@@ -1253,7 +1246,6 @@
   padding: 0;
 }
 
-/* Avatar image */
 .columns.columns26 > div > div:first-child > p:nth-child(3) picture,
 .columns.columns26 > div > div:first-child > p:nth-child(3) img {
   width: 48px;
@@ -1265,7 +1257,6 @@
   vertical-align: middle;
 }
 
-/* Author name and role (next to avatar) */
 .columns.columns26 > div > div:first-child > p:nth-child(4) {
   font-weight: 700;
   font-size: 1rem;
@@ -1285,7 +1276,6 @@
   display: block;
 }
 
-/* Group p3, p4, p5 (avatar, name, role) into a row */
 .columns.columns26 > div > div:first-child > .columns-avatar-row,
 .columns.columns26 > div > div:first-child > p:nth-child(3) {
   margin-top: 18px;
@@ -1295,7 +1285,6 @@
   margin-right: 8px;
 }
 
-/* RIGHT COLUMN: logo + optional text horizontally aligned, bottom right */
 .columns.columns26 > div > .columns-img-col {
   display: flex;
   flex-direction: row;
@@ -1309,7 +1298,6 @@
   gap: 16px;
 }
 
-/* Logo image styles */
 .columns.columns26 > div > .columns-img-col picture,
 .columns.columns26 > div > .columns-img-col img {
   display: inline-block;
@@ -1325,7 +1313,6 @@
   opacity: 1;
 }
 
-/* Show any text-based logo/brand in .columns-img-col (if present), larger and bold */
 .columns.columns26 > div > .columns-img-col *:not(img, picture) {
   font-family: var(--heading-font-family);
   font-size: 1.6rem;
@@ -1338,7 +1325,6 @@
   margin-left: 8px;
 }
 
-/* Responsiveness: stack on mobile */
 @media (width <= 900px) {
   .columns.columns26 > div {
     grid-template-columns: 1fr;
@@ -1374,7 +1360,6 @@
     margin-left: 4px;
   }
 
-  /* Avatar/name/role stack vertically on mobile for more space */
   .columns.columns26 > div > div:first-child > p:nth-child(3),
   .columns.columns26 > div > div:first-child > p:nth-child(4),
   .columns.columns26 > div > div:first-child > p:nth-child(5) {
@@ -1387,4 +1372,189 @@
   .columns.columns26 > div > div:first-child > p:nth-child(3) {
     margin-bottom: 8px;
   }
+}
+
+
+.columns.columns27 {
+  background: #FAF9F6;
+  padding: 0;
+}
+
+/* Make columns flush at the top, with more balanced width proportions */
+.columns.columns27 > div {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 72px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 64px 44px;
+  box-sizing: border-box;
+  min-height: 600px;
+}
+
+/* Responsive: stack columns on mobile */
+@media (width <= 900px) {
+  .columns.columns27 > div {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 32px;
+    padding: 32px 16px;
+    min-height: unset;
+  }
+}
+
+/* Text column: stack content vertically, max width */
+.columns.columns27 > div > div:first-child {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 26px;
+  max-width: 520px;
+  min-width: 0;
+  flex: 1 1 0;
+}
+
+/* Author label */
+.columns.columns27 > div > div:first-child > p:first-child {
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #585858;
+  letter-spacing: 0.05em;
+  margin-bottom: 0;
+  margin-top: 0;
+  font-family: var(--body-font-family);
+  font-weight: 400;
+  overflow-wrap: break-word; /* Replaced deprecated 'word-break' property */
+}
+
+/* Headline (h2) styling */
+.columns.columns27 > div > div:first-child > h2 {
+    font-size: 40px;
+  }
+
+@media (width <= 900px) {
+  .columns.columns27 > div > div:first-child > h2 {
+    font-size: 40px;
+  }
+}
+
+/* Main descriptive paragraph */
+.columns.columns27 > div > div:first-child > p:nth-child(3) {
+  font-size: 18px;
+  color: #181818;
+  line-height: 1.7;
+  margin: 0 0 12px;
+  font-family: var(--body-font-family);
+  font-weight: 400;
+}
+
+/* Supporting paragraph: lighter, smaller, with margin above */
+.columns.columns27 > div > div:first-child > p:nth-child(4) {
+  font-size: 11px;
+  color: #A1A1A1;
+  margin: 22px 0 0;
+  font-family: var(--body-font-family);
+  font-weight: 400;
+}
+
+/* Button container: immediately under supporting text */
+.columns.columns27 .button-container {
+  margin: 8px 0 0;
+}
+
+/* Subscribe button appearance */
+.columns.columns27 .button-container .button {
+  display: inline-block;
+  font-size: 15px;
+  padding: 7px 22px;
+  border: 1px solid #181818;
+  border-radius: 22px;
+  color: #181818;
+  background: #fff;
+  text-decoration: none;
+  font-family: var(--body-font-family);
+  font-weight: 500;
+  margin-top: 2px;
+  box-shadow: none;
+  margin-bottom: 0;
+}
+
+/* Button hover/focus */
+.columns.columns27 .button-container .button:hover,
+.columns.columns27 .button-container .button:focus {
+  background: #181818;
+  color: #fff;
+}
+
+/* Image column: wider, flush top, fill available height */
+.columns.columns27 .columns-img-col {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  flex: 0 0 500px;
+  max-width: 500px;
+  min-width: 320px;
+  width: 100%;
+  min-height: 560px;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+@media (width <= 1200px) {
+  .columns.columns27 .columns-img-col {
+    flex: 0 0 400px;
+    max-width: 400px;
+    min-width: 180px;
+    min-height: 360px;
+  }
+}
+
+@media (width <= 900px) {
+  .columns.columns27 .columns-img-col {
+    max-width: 100%;
+    width: 100%;
+    min-width: 0;
+    min-height: 320px;
+    justify-content: center;
+    margin: 0 auto;
+  }
+}
+
+/* Image: aspect, rounded, always flush at top */
+.columns.columns27 .columns-img-col img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4/5;
+  object-fit: cover;
+  border-radius: 24px;
+  box-shadow: none;
+  background: none;
+  margin: 0;
+  align-self: flex-start;
+  min-height: 520px;
+  max-width: 100%;
+}
+
+@media (width <= 900px) {
+  .columns.columns27 .columns-img-col img {
+    min-height: 220px;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+}
+
+/* Override button styles for this block only */
+.columns.columns27 .button {
+  background: #fff;
+  color: #181818;
+  border: 1px solid #181818;
+  margin-bottom: 8px;
+}
+
+.columns.columns27 .button:hover,
+.columns.columns27 .button:focus {
+  background: #181818;
+  color: #fff;
 }
