@@ -643,7 +643,6 @@
   background: #fff;
 }
 
-/* Side-by-side flex row, top aligned */
 .columns.columns14 > div {
   display: flex;
   flex-direction: row;
@@ -667,21 +666,18 @@
   }
 }
 
-/* Stack children in each column vertically */
 .columns.columns14 > div > div {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
 
-/* Headline column: visually dominant */
 .columns.columns14 > div > div:first-child {
   flex: 1 1 68%;
   min-width: 320px;
   max-width: 850px;
 }
 
-/* Content column: left-aligned, slightly wider for better wrap */
 .columns.columns14 > div > div:last-child {
   flex: 0 1 340px;
   max-width: 340px;
@@ -689,7 +685,6 @@
   align-items: flex-start;
 }
 
-/* Headline styles */
 .columns.columns14 h2 {
   font-family: var(--heading-font-family);
   font-size: 3rem;
@@ -708,7 +703,6 @@
   }
 }
 
-/* Description paragraph: compact below, left-aligned, allow wrap to multiple lines */
 .columns.columns14 > div > div:last-child p:not(.button-container) {
   font-family: var(--body-font-family);
   font-size: 1rem;
@@ -719,7 +713,6 @@
   max-width: 100%;
 }
 
-/* Remove margin below button container (tight group) */
 .columns.columns14 .button-container {
   margin-top: 0;
   margin-bottom: 0;
@@ -728,7 +721,6 @@
   display: block;
 }
 
-/* Button: pill shape, compact, left-aligned */
 .columns.columns14 .button {
   box-sizing: border-box;
   padding: 0.16em 1.1em;
@@ -754,4 +746,144 @@
   color: #fff;
   border-color: #000;
   text-decoration: none;
+}
+
+
+.columns.columns15 {
+  background: #f6f7f3;
+  padding-top: 5vh;
+  padding-bottom: 7vh;
+  min-height: 84vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.columns.columns15 > div {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start; /* Visually align content higher, not center */
+  justify-content: space-between;
+  gap: 4rem;
+  max-width: 1280px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+@media (width <= 900px) {
+  .columns.columns15 > div {
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 2rem;
+    max-width: 96vw;
+    padding: 2rem 0;
+  }
+}
+
+.columns.columns15 > div > div:first-child {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  min-width: 0;
+  flex: 1 1 0;
+}
+
+.columns.columns15 h1 {
+  font-family: Syncopate, 'Syncopate Fallback', sans-serif;
+  font-size: 3.4rem;
+  color: #151515;
+  font-weight: 400;
+  line-height: 1.03;
+  margin-bottom: 1.6rem;
+  margin-top: 0;
+  letter-spacing: 0.01em;
+}
+
+@media (width <= 900px) {
+  .columns.columns15 h1 {
+    font-size: 2.3rem;
+  }
+}
+
+.columns.columns15 p {
+  color: #60605b;
+  font-size: 1.1rem;
+  margin-bottom: 1.05rem;
+  max-width: 440px;
+  line-height: 1.5;
+}
+
+.columns.columns15 .button-container {
+  margin-top: 1.1rem;
+  margin-bottom: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+}
+
+.columns.columns15 .button-container > .button {
+  border: 1px solid #151515;
+  background: #fff;
+  color: #151515;
+  padding: 0.85em 2.2em;
+  border-radius: 999px;
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 0;
+  box-shadow: none;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow 0.2s;
+  min-width: 120px;
+  max-width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.columns.columns15 .button-container > .button:last-child {
+  margin-right: 0;
+}
+
+.columns.columns15 .button-container > .button:hover,
+.columns.columns15 .button-container > .button:focus {
+  box-shadow: 0 1px 8px 0 #d8ffbd88;
+  border-color: #d8ffbd;
+}
+
+.columns.columns15 .columns-img-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+  min-width: 0;
+  flex: 1 1 0;
+  margin-top: 0.6rem;
+}
+
+@media (width <= 900px) {
+  .columns.columns15 .columns-img-col {
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 0;
+  }
+}
+
+.columns.columns15 .columns-img-col img {
+  border-radius: 24px;
+  max-width: 420px;
+  width: 100%;
+  object-fit: cover;
+  margin-bottom: 0;
+  box-shadow: none;
+  background: #fff;
+  display: block;
+}
+
+@media (width <= 900px) {
+  .columns.columns15 .columns-img-col img {
+    max-width: 95vw;
+  }
 }
