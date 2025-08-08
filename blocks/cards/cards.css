@@ -310,3 +310,86 @@
 .cards.cards10 .cards-card-body {
   min-height: 0;
 }
+
+
+.cards.cards17 {
+  background: #fff;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 1200px;
+  box-sizing: border-box;
+}
+
+/* Strict grid: 3 columns, all cards equal and centered, responsive at breakpoints */
+.cards.cards17 > ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+  place-items: stretch center;
+  width: 100%;
+  max-width: 1200px;
+  box-sizing: border-box;
+}
+
+/* Responsive: 2 columns for tablets, 1 for mobile */
+@media (width <= 900px) {
+  .cards.cards17 > ul {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 800px;
+    gap: 18px;
+  }
+}
+
+@media (width <= 600px) {
+  .cards.cards17 > ul {
+    grid-template-columns: 1fr;
+    max-width: 420px;
+    gap: 12px;
+  }
+}
+
+.cards.cards17 > ul > li {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+  min-height: 0;
+}
+
+/* Remove spacing from the body if empty */
+.cards.cards17 .cards-card-body {
+  margin: 0;
+  padding: 0;
+  display: none;
+}
+
+/* Remove inline gap for images */
+.cards.cards17 .cards-card-image {
+  line-height: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.cards.cards17 .cards-card-image img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 21px;
+  background: #fff;
+  margin: 0;
+  max-width: 100%;
+  height: auto;
+  box-shadow: 0 0 0 0 transparent;
+  border: none;
+
+  /* Prevent bleed from inherited styles */
+}
