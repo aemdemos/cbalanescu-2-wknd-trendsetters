@@ -918,7 +918,6 @@
   position: relative;
 }
 
-/* CARD BASE STYLES */
 .cards.cards25 > ul > li {
   position: relative;
   border: none;
@@ -932,7 +931,6 @@
   padding: 0;
 }
 
-/* IMAGE BACKGROUND */
 .cards.cards25 > ul > li .cards-card-image {
   position: absolute;
   inset: 0;
@@ -955,7 +953,6 @@
   background: transparent;
 }
 
-/* TEXT OVERLAY */
 .cards.cards25 > ul > li .cards-card-body {
   position: absolute;
   top: 24px;
@@ -999,14 +996,13 @@
   text-shadow: 0 2px 8px #000, 0 0 1px #000;
 }
 
-/* GRID POSITIONING */
-.cards.cards25 > ul > li:nth-child(1) { /* Tennis court cool */
+.cards.cards25 > ul > li:nth-child(1) {
   grid-column: 1;
   grid-row: 1;
   min-height: 210px;
 }
 
-.cards.cards25 > ul > li:nth-child(2) { /* Beach day energy */
+.cards.cards25 > ul > li:nth-child(2) {
   grid-column: 2;
   grid-row: 1 / span 2;
   min-height: 400px;
@@ -1014,13 +1010,13 @@
   flex-direction: column;
 }
 
-.cards.cards25 > ul > li:nth-child(3) { /* Middle left card */
+.cards.cards25 > ul > li:nth-child(3) {
   grid-column: 1;
   grid-row: 2;
   min-height: 180px;
 }
 
-.cards.cards25 > ul > li:nth-child(4) { /* Night out sparkle (bottom left) */
+.cards.cards25 > ul > li:nth-child(4) {
   grid-column: 1;
   grid-row: 3;
   min-height: 152px;
@@ -1028,9 +1024,6 @@
   margin-right: 0;
 }
 
-/* --- BOTTOM RIGHT CARDS: FLEXBOX INSIDE GRID --- */
-
-/* Both bottom-right cards occupy the same grid cell. Position side-by-side using float/flex. */
 .cards.cards25 > ul > li:nth-child(5),
 .cards.cards25 > ul > li:nth-child(6) {
   grid-column: 2;
@@ -1052,14 +1045,12 @@
   margin-right: 0;
 }
 
-/* Clear floats for bottom row after the two bottom-right cards */
 .cards.cards25 > ul::after {
   content: "";
   display: table;
   clear: both;
 }
 
-/* Responsive: stack cards vertically on small screens */
 @media (width <= 900px) {
   .cards.cards25 > ul {
     grid-template-columns: 1fr;
@@ -1093,5 +1084,139 @@
 
   .cards.cards25 > ul > li .cards-card-body p {
     font-size: 0.87rem;
+  }
+}
+
+
+.cards.cards33 > ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.2rem 3rem;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  grid-auto-rows: minmax(255px, auto);
+}
+
+.cards.cards33 > ul > li {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  min-height: 255px;
+  background: none;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0;
+}
+
+.cards.cards33 .cards-card-image {
+  flex: 0 1 56%;
+  min-width: 250px;
+  max-width: 410px;
+  margin-right: 1.65rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cards.cards33 .cards-card-image picture,
+.cards.cards33 .cards-card-image img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 26px;
+  display: block;
+}
+
+.cards.cards33 .cards-card-body {
+  flex: 1 1 44%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+  padding: 0 0.25rem 0 0;
+  margin: 0;
+}
+
+.cards.cards33 .cards-card-body p {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.cards.cards33 .cards-card-body p:first-child,
+.cards.cards33 .cards-card-body p:nth-child(2) {
+  display: inline-block;
+  vertical-align: middle;
+  margin-top: 0.35rem;
+  margin-bottom: 0.7rem;
+  line-height: 1.1;
+}
+
+.cards.cards33 .cards-card-body p:first-child {
+  background: #eaeaea;
+  color: #606060;
+  border-radius: 16px;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  padding: 0.27rem 1.1rem 0.22rem 0.85rem;
+  margin-right: 0.5rem;
+}
+
+.cards.cards33 .cards-card-body p:nth-child(2) {
+  color: #606060;
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+.cards.cards33 .cards-card-body h3 {
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-l);
+  color: #19191A;
+  font-weight: 700;
+  margin: 0.05rem 0 1.18rem;
+  letter-spacing: 1px;
+  line-height: 1.1;
+}
+
+.cards.cards33 .cards-card-body p:nth-child(4) {
+  font-size: var(--body-font-size-s);
+  color: #606060;
+  margin-bottom: 1.1rem;
+}
+
+.cards.cards33 .cards-card-body p:last-child {
+  font-size: var(--body-font-size-s);
+  color: #19191A;
+  font-weight: 500;
+  margin: 0;
+  margin-top: auto;
+  cursor: pointer;
+}
+
+@media (width <= 900px) {
+  .cards.cards33 > ul {
+    grid-template-columns: 1fr;
+    gap: 1.35rem;
+    grid-auto-rows: minmax(220px, auto);
+  }
+
+  .cards.cards33 > ul > li {
+    flex-direction: column;
+    min-height: 220px;
+    align-items: stretch;
+  }
+
+  .cards.cards33 .cards-card-image,
+  .cards.cards33 .cards-card-body {
+    width: 100%;
+    min-width: 0;
+    max-width: none;
+    margin-right: 0;
+    padding: 0;
   }
 }
