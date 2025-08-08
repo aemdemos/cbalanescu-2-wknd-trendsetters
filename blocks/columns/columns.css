@@ -762,7 +762,7 @@
 .columns.columns15 > div {
   display: flex;
   flex-direction: row;
-  align-items: flex-start; /* Visually align content higher, not center */
+  align-items: flex-start;
   justify-content: space-between;
   gap: 4rem;
   max-width: 1280px;
@@ -884,6 +884,86 @@
 
 @media (width <= 900px) {
   .columns.columns15 .columns-img-col img {
+    max-width: 95vw;
+  }
+}
+
+
+.columns.columns16 > div > .columns-img-col {
+  /* Restore visibility for all image columns, overriding any prior display:none */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  flex: 0 0 auto;
+}
+
+.columns.columns16 {
+  background: #fff;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.columns.columns16 > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1.2rem;
+  width: 100%;
+  min-height: 180px;
+  overflow-x: visible;
+}
+
+/* Image sizing and formatting */
+.columns.columns16 .columns-img-col picture,
+.columns.columns16 .columns-img-col img {
+  display: block;
+  max-width: 220px;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 0;
+  aspect-ratio: unset;
+  object-fit: unset;
+  background: transparent;
+  box-shadow: none;
+}
+
+/* Playful angled rotation for each image */
+.columns.columns16 .columns-img-col:nth-child(1) { transform: rotate(-6deg); }
+.columns.columns16 .columns-img-col:nth-child(2) { transform: rotate(5deg); }
+.columns.columns16 .columns-img-col:nth-child(3) { transform: rotate(-4deg); }
+.columns.columns16 .columns-img-col:nth-child(4) { transform: rotate(6deg); }
+.columns.columns16 .columns-img-col:nth-child(5) { transform: rotate(-3deg); }
+.columns.columns16 .columns-img-col:nth-child(6) { transform: rotate(2deg); }
+
+/* Responsive: wrap or stack images on smaller screens */
+@media (width <= 1000px) {
+  .columns.columns16 > div {
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    min-height: 0;
+  }
+
+  .columns.columns16 {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+}
+
+@media (width <= 650px) {
+  .columns.columns16 > div {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .columns.columns16 .columns-img-col picture,
+  .columns.columns16 .columns-img-col img {
     max-width: 95vw;
   }
 }
