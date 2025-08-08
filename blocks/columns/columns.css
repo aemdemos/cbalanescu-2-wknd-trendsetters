@@ -192,7 +192,6 @@
   box-sizing: border-box;
 }
 
-/* Lay out direct children in a row (grid alternative didn't reveal text, so use flex) */
 .columns.columns4 > div {
   display: flex;
   flex-direction: row;
@@ -202,12 +201,10 @@
   box-sizing: border-box;
 }
 
-/* Hide image columns */
 .columns.columns4 > div > .columns-img-col {
   display: none;
 }
 
-/* Show and style all other direct children (text, headings, paragraphs, etc.) */
 .columns.columns4 > div > *:not(.columns-img-col) {
   display: block;
   width: 100%;
@@ -222,13 +219,11 @@
   box-sizing: border-box;
 }
 
-/* Remove extra margin/padding for nested text elements */
 .columns.columns4 > div > *:not(.columns-img-col) > * {
   margin: 0;
   padding: 0;
 }
 
-/* Responsive vertical padding for larger screens */
 @media (width >= 900px) {
   .columns.columns4 {
     padding: 64px 0;
@@ -236,5 +231,159 @@
 
   .columns.columns4 > div > *:not(.columns-img-col) {
     font-size: 18px;
+  }
+}
+
+
+.columns.columns5 {
+  display: grid;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background: #fff;
+}
+
+.columns.columns5 > div {
+  display: grid;
+
+  /* Subtle image dominance, less extreme than before */
+  grid-template-columns: 0.8fr 1.2fr;
+  width: 100%;
+  min-height: 84vh;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.columns.columns5 > div > div:first-child {
+  /* Left-align and vertically center text block */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100%;
+  min-height: 0;
+  box-sizing: border-box;
+
+  /* Reduced left padding for better anchoring, less right padding */
+  padding: 0 4vw 0 6vw;
+  background: #fff;
+}
+
+.columns.columns5 h2 {
+  font-family: var(--heading-font-family);
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: #232323;
+  margin: 0 0 0.9rem;
+  line-height: 1.07;
+  text-align: left;
+  width: 100%;
+}
+
+.columns.columns5 p:not(.button-container) {
+  color: #656565;
+  font-size: 1em;
+  font-weight: 400;
+  margin: 0 0 0.1rem; /* Minimal gap to button */
+  line-height: 1.48;
+  max-width: 38em;
+  letter-spacing: 0.01em;
+  text-align: left;
+  width: 100%;
+}
+
+.columns.columns5 .button-container {
+  display: flex;
+  gap: 1.2em;
+  margin-top: 0; /* Remove gap from above */
+  margin-bottom: 0;
+  padding: 0;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.columns.columns5 .button-container .button {
+  border: 2px solid #232323;
+  background: transparent;
+  color: #232323;
+  font-size: 1em;
+  border-radius: 999px;
+  padding: 0.75em 2.5em;
+  font-weight: 500;
+  box-shadow: none;
+  margin: 0;
+  min-width: 0;
+  line-height: 1.2;
+  transition: background 0.18s, color 0.18s, border 0.18s;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.columns.columns5 .button-container .button:hover,
+.columns.columns5 .button-container .button:focus {
+  background: #232323;
+  color: #fff;
+  border-color: #232323;
+  text-decoration: none;
+}
+
+.columns.columns5 > div > .columns-img-col {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-end;
+  background: #fff;
+}
+
+.columns.columns5 .columns-img-col picture,
+.columns.columns5 .columns-img-col img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  max-width: unset;
+  max-height: unset;
+}
+
+@media (width >= 900px) {
+  .columns.columns5 > div {
+    gap: 0;
+  }
+
+  .columns.columns5 > div > .columns-img-col {
+    padding: 0;
+    margin: 0;
+  }
+}
+
+@media (width <= 899px) {
+  .columns.columns5 > div {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    min-height: 0;
+  }
+
+  .columns.columns5 > div > div:first-child,
+  .columns.columns5 > div > .columns-img-col {
+    padding-left: 6vw;
+    padding-right: 6vw;
+    min-height: 320px;
+    height: auto;
+  }
+
+  .columns.columns5 > div > .columns-img-col {
+    margin-top: 3vw;
+    margin-bottom: 0;
   }
 }
