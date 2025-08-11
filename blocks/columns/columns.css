@@ -956,8 +956,8 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 64px; /* reduced for a more visually connected row */
-  padding: 36px 0; /* tighter vertical spacing for better balance */
+  gap: 64px;
+  padding: 36px 0;
   background: #fff;
   box-sizing: border-box;
 }
@@ -968,8 +968,6 @@
   justify-content: center;
   flex-shrink: 0;
 }
-
-/* Tweaked playful, natural rotation angles */
 .columns.columns16 .columns-img-col:nth-child(1) { transform: rotate(-5deg); }
 .columns.columns16 .columns-img-col:nth-child(2) { transform: rotate(3deg); }
 .columns.columns16 .columns-img-col:nth-child(3) { transform: rotate(-4deg); }
@@ -990,7 +988,6 @@
   transition: box-shadow 0.16s;
 }
 
-/* Responsive adjustments for tablet */
 @media (width <= 1400px) {
   .columns.columns16 > div {
     gap: 44px;
@@ -1034,4 +1031,160 @@
     aspect-ratio: 4 / 3;
     border-radius: 7px;
   }
+}
+
+
+.columns.columns18 > div {
+  display: grid;
+  grid-template-columns: 1.65fr 0.35fr;
+  grid-template-rows: auto auto;
+  gap: 0 8px;
+  align-items: start;
+  padding: 48px 0 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Responsive stacking for mobile */
+@media (width <= 899px) {
+  .columns.columns18 > div {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 20px;
+    padding: 32px 0 0;
+  }
+
+  .columns.columns18 > div > .columns-img-col {
+    grid-column: 1;
+    grid-row: 3;
+    margin-top: 28px;
+  }
+}
+
+.columns.columns18 > div > div:nth-child(1) {
+  grid-column: 1;
+  grid-row: 1;
+  place-self: start start;
+}
+
+.columns.columns18 > div > div:nth-child(2) {
+  grid-column: 2;
+  grid-row: 1;
+  place-self: start start;
+  margin-top: 0; /* Ensures top alignment with headline */
+}
+
+.columns.columns18 > div > .columns-img-col {
+  grid-column: 1 / span 2;
+  grid-row: 2;
+  margin-top: 72px;
+}
+
+/* Make left column (text) visually dominant */
+.columns.columns18 > div > div {
+  min-width: 0;
+}
+
+/* Headline (h3): large, bold, geometric */
+.columns.columns18 > div > div h3 {
+  font-size: 3.1rem;
+  font-family: var(--heading-font-family);
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #1a1a1a;
+  letter-spacing: 0.01em;
+  margin-top: 6px;
+  margin-bottom: 10px;
+  line-height: 1.08;
+}
+
+/* Subtitle (h2): small, uppercase, letter-spaced, gray */
+.columns.columns18 > div > div h2 {
+  font-size: 13px;
+  color: #9e9e9e;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-family: var(--heading-font-family);
+  font-weight: 400;
+  margin-bottom: 1px;
+  margin-top: 0;
+  line-height: 1.4;
+}
+
+/* Body/supporting text */
+.columns.columns18 > div > div p {
+  font-size: 16px;
+  color: #616161;
+  font-family: var(--body-font-family);
+  margin-bottom: 0;
+  margin-top: 0;
+  line-height: 1.5;
+}
+
+/* Image styling */
+.columns.columns18 .columns-img-col picture,
+.columns.columns18 .columns-img-col img {
+  width: 100%;
+  display: block;
+  border-radius: 36px;
+  overflow: hidden;
+  box-shadow: 0 2px 24px 0 rgb(20 20 20 / 8%);
+}
+
+/* Remove bullets and adjust spacing on ul in contact info */
+.columns.columns18 > div > div ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 0;
+}
+
+/* Contact rows: tighter grouping and less vertical space */
+.columns.columns18 > div > div > ul:not(:last-child) {
+  margin-bottom: 16px;
+}
+
+/* Contact label styling */
+.columns.columns18 > div > div h4 {
+  font-size: 12px;
+  color: #9e9e9e;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  font-family: var(--heading-font-family);
+  font-weight: 600;
+  margin-bottom: 2px;
+  margin-top: 12px;
+  line-height: 1.2;
+}
+
+/* Icon inside contact info */
+.columns.columns18 > div > div ul picture {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f5f5f5;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+}
+
+/* Contact details text (second li in each ul) */
+.columns.columns18 > div > div ul li:not(:has(picture)) {
+  font-size: 16px;
+  color: #212121;
+  font-family: var(--body-font-family);
+  font-weight: 500;
+  line-height: 1.2;
+  margin-bottom: 0;
+}
+
+.columns.columns18 > div > div ul img {
+  width: 24px;
+  height: 24px;
+  display: block;
 }
