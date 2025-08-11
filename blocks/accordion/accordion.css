@@ -68,7 +68,6 @@
   box-sizing: border-box;
 }
 
-/* Remove borders and card styling from details */
 .accordion.accordion13 details {
   border: none;
   margin: 0;
@@ -78,17 +77,14 @@
   border-bottom: 1px solid #d7d6d2;
 }
 
-/* Remove bottom border from last detail */
 .accordion.accordion13 details:last-child {
   border-bottom: none;
 }
 
-/* Remove margin between details */
 .accordion.accordion13 details + details {
   margin-top: 0;
 }
 
-/* Summary (question) styling */
 .accordion.accordion13 summary {
   display: flex;
   align-items: center;
@@ -110,7 +106,6 @@
   width: 100%;
 }
 
-/* Hide details marker arrow reliably */
 .accordion.accordion13 summary::-webkit-details-marker,
 .accordion.accordion13 summary::marker {
   display: none;
@@ -118,7 +113,6 @@
   color: transparent;
 }
 
-/* The question text inside summary */
 .accordion.accordion13 summary p {
   font-family: inherit;
   font-size: inherit;
@@ -130,21 +124,18 @@
   line-height: inherit;
 }
 
-/* When details are open, use flex row for Q and A */
 .accordion.accordion13 details[open] {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
 
-/* Left: summary as left column */
 .accordion.accordion13 details[open] summary {
   flex: 0 0 43%;
   cursor: default;
   width: auto;
 }
 
-/* Right: answer (body) as right column */
 .accordion.accordion13 details[open] .accordion-item-body {
   flex: 1 1 57%;
   min-width: 0;
@@ -154,9 +145,8 @@
   align-items: center;
 }
 
-/* Answer text */
 .accordion.accordion13 details[open] .accordion-item-body p {
-  font-family: Montserrat, Instrument Sans, Instrument Sans Fallback, Arial, sans-serif;
+  font-family: Montserrat, "Instrument Sans", "Instrument Sans Fallback", Arial, sans-serif;
   font-size: 13px;
   font-weight: 400;
   color: #353433;
@@ -165,7 +155,6 @@
   overflow-wrap: break-word;
 }
 
-/* Responsive: stack columns vertically on small screens */
 @media (width <= 600px) {
   .accordion.accordion13 details[open] {
     flex-direction: column;
@@ -182,5 +171,117 @@
 
   .accordion.accordion13 details[open] .accordion-item-body {
     margin-top: 4px;
+  }
+}
+
+
+.accordion.accordion34 {
+  background-color: #F7F7F4;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+/* Vertical stack, divider line between items */
+.accordion.accordion34 > .accordion-item {
+  border-bottom: 1px solid #E0E0DC;
+  margin: 0;
+  padding: 0;
+}
+
+.accordion.accordion34 > .accordion-item:last-child {
+  border-bottom: none;
+}
+
+/* Row: side-by-side flex, more right padding for chevron spacing, slightly more vertical breathing room */
+.accordion.accordion34 .accordion-item-label {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  min-height: 48px;
+  padding: 16px 40px 16px 16px;
+  box-sizing: border-box;
+  cursor: pointer;
+  background: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Hide summary marker */
+.accordion.accordion34 details summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Question text: allow wrapping, match font and spacing */
+.accordion.accordion34 .accordion-item-label p {
+  color: #212121;
+  font-size: 15px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  margin: 0;
+  line-height: 1.5;
+  flex: 1 1 0;
+  white-space: normal;
+  overflow: visible;
+  text-overflow: unset;
+}
+
+/* Chevron arrow: slightly thinner, lighter, perfectly right-aligned */
+.accordion.accordion34 .accordion-item-label::after {
+  display: block;
+  width: 18px;
+  height: 18px;
+  border-style: solid;
+  border-color: #212121;
+  border-width: 0 1.5px 1.5px 0;
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+  background: transparent;
+  box-sizing: border-box;
+}
+
+/* Chevron rotates up when opened */
+.accordion.accordion34 details[open] .accordion-item-label::after {
+  transform: translateY(-50%) rotate(-135deg);
+}
+
+/* Answer/content body: match overall padding and style */
+.accordion.accordion34 .accordion-item-body {
+  padding: 0 16px 16px;
+  color: #212121;
+  font-size: 15px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  margin: 0;
+  line-height: 1.6;
+  background: none;
+}
+
+/* Remove extra bolding and spacing from details element if inherited */
+.accordion.accordion34 details {
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+}
+
+/* Responsive: Adjust spacing for smaller screens */
+@media (width <= 600px) {
+  .accordion.accordion34 .accordion-item-label {
+    padding: 12px 24px 12px 8px;
+    min-height: 40px;
+  }
+
+  .accordion.accordion34 .accordion-item-body {
+    padding: 0 8px 12px;
+  }
+
+  .accordion.accordion34 .accordion-item-label::after {
+    right: 8px;
   }
 }
