@@ -775,14 +775,12 @@
 }
 
 .hero.hero35 > div:first-child {
-  /* Left margin spacer */
   flex: 0 0 6vw;
   min-width: 48px;
   max-width: 10vw;
   height: 100%;
 }
 
-/* Outer right column: centers content vertically */
 .hero.hero35 > div:last-child {
   flex: 1 1 900px;
   max-width: 1100px;
@@ -794,7 +792,6 @@
   box-sizing: border-box;
 }
 
-/* Inner layout: side by side text and button */
 .hero.hero35 > div:last-child > div {
   display: flex;
   flex-direction: row;
@@ -803,7 +800,6 @@
   gap: 48px;
 }
 
-/* Text column */
 .hero.hero35 > div:last-child > div > h2,
 .hero.hero35 > div:last-child > div > p:not(.button-container) {
   text-align: left;
@@ -826,7 +822,6 @@
   font-weight: 400;
 }
 
-/* Button column */
 .hero.hero35 .button-container {
   display: flex;
   align-items: center;
@@ -856,7 +851,6 @@
   margin: 0;
 }
 
-/* Responsive: stack vertically */
 @media (width <= 900px) {
   .hero.hero35 {
     flex-direction: column;
@@ -893,4 +887,125 @@
     min-width: 180px;
     width: 100%;
   }
+}
+
+
+.hero.hero39 {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  min-height: 100vh;
+  position: relative;
+  padding: 0;
+  margin: 0;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.hero.hero39 > div:first-child {
+  grid-column: 1 / -1;
+  grid-row: 1 / -1;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero.hero39 picture,
+.hero.hero39 img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.hero.hero39 > div:last-child {
+  grid-column: 1 / -1;
+  grid-row: 1 / -1;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  min-height: 100vh;
+  max-width: 580px;
+  padding-left: 6vw;
+  padding-top: 4vh;
+  padding-right: 2vw;
+  color: #fff;
+}
+
+.hero.hero39 h1,
+.hero.hero39 p {
+  margin-left: 0;
+  margin-right: 0;
+  color: #fff;
+  text-align: left;
+  max-width: 96%;
+}
+
+.hero.hero39 h1 {
+  font-family: Syncopate, "Syncopate Fallback", sans-serif;
+  font-size: clamp(3.4rem, 9vw, 7.8rem);
+  font-weight: 300;
+  line-height: 1.16;
+  margin-bottom: 0.2rem;
+  letter-spacing: 0;
+}
+
+.hero.hero39 p:not(.button-container) {
+  font-size: clamp(1.05rem, 2vw, 1.16rem);
+  line-height: 1.5;
+  margin-bottom: 0.5rem;
+}
+
+.hero.hero39 .button-container {
+  margin: 0;
+}
+
+.hero.hero39 .button {
+  border-radius: 30px;
+  padding: 10px 32px;
+  border: 1px solid #fff;
+  background: transparent;
+  color: #fff;
+  font-size: 16px;
+  transition: background 0.2s, color 0.2s;
+  box-shadow: none;
+  margin: 0;
+  text-align: left;
+}
+
+.hero.hero39 .button:hover,
+.hero.hero39 .button:focus {
+  background: #fff;
+  color: #222;
+  outline: none;
+}
+
+@media (width <= 900px) {
+  .hero.hero39 > div:last-child {
+    max-width: 98vw;
+    padding-left: 4vw;
+    padding-top: 4vw;
+    padding-right: 4vw;
+    min-height: 60vh;
+  }
+
+  .hero.hero39 h1 {
+    font-size: clamp(2rem, 12vw, 4rem);
+  }
+}
+
+/* Overlay for text readability */
+.hero.hero39::after {
+  position: absolute;
+  inset: 0;
+  background: rgb(0 0 0 / 6%);
+  z-index: 1;
+  pointer-events: none;
+  display: block;
 }
