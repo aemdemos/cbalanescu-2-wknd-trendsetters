@@ -1377,23 +1377,20 @@
   display: block;
 }
 
-/* Flex layout for text and image columns, with improved gap and alignment */
 .columns.columns27 > .block.columns-2-cols > div {
   display: flex;
   flex-flow: row nowrap;
   align-items: flex-start;
-  gap: 6rem; /* More generous horizontal space */
+  gap: 6rem;
   max-width: 1100px;
   margin: 0 auto;
 }
 
-/* Make both columns top-aligned */
 .columns.columns27 > .block.columns-2-cols > div > div:first-child,
 .columns.columns27 > .block.columns-2-cols > div > .columns-img-col {
   align-self: flex-start;
 }
 
-/* Stack columns vertically on mobile */
 @media (width <= 900px) {
   .columns.columns27 > .block.columns-2-cols > div {
     flex-direction: column;
@@ -1402,7 +1399,6 @@
   }
 }
 
-/* Text column: narrower for readability */
 .columns.columns27 > .block.columns-2-cols > div > div:first-child {
   flex: 1 1 0;
   min-width: 0;
@@ -1412,7 +1408,6 @@
   justify-content: flex-start;
 }
 
-/* Image column: portrait ratio and top-aligned */
 .columns.columns27 > .block.columns-2-cols > div > .columns-img-col {
   flex: 1 1 0;
   min-width: 0;
@@ -1425,7 +1420,6 @@
   padding-top: 0;
 }
 
-/* Responsive image sizing and portrait aspect ratio */
 .columns.columns27 .columns-img-col img {
   border-radius: 2rem;
   width: 100%;
@@ -1441,7 +1435,6 @@
   display: block;
 }
 
-/* Typography adjustments */
 .columns.columns27 > .block.columns-2-cols > div > div:first-child > p:first-child {
   font-size: 0.85rem;
   color: #888;
@@ -1477,7 +1470,6 @@
   line-height: 1.6;
 }
 
-/* Button styling and spacing improvements */
 .columns.columns27 .button-container .button {
   background: #fff;
   color: #191919;
@@ -1500,7 +1492,6 @@
   border-color: #191919;
 }
 
-/* Responsive tweaks for mobile */
 @media (width <= 600px) {
   .columns.columns27 {
     padding: 2rem 1rem;
@@ -1516,5 +1507,52 @@
     height: auto;
     aspect-ratio: unset;
     border-radius: 1.5rem;
+  }
+}
+
+
+.columns.columns29 > div {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 24px;
+  background: #fff;
+  padding: 0;
+  margin: 0;
+  min-height: 0;
+  height: 38vw; /* Responsive vertical fill, visually matches original */
+  max-height: 540px;
+}
+
+.columns.columns29 .columns-img-col {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  align-items: stretch;
+}
+
+.columns.columns29 .columns-img-col picture,
+.columns.columns29 .columns-img-col img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 24px;
+  display: block;
+  background: #eee;
+}
+
+/* Responsive: stack vertically and adjust height on small screens */
+@media (width <= 900px) {
+  .columns.columns29 > div {
+    flex-direction: column;
+    height: auto;
+    max-height: none;
+    gap: 24px;
+  }
+
+  .columns.columns29 .columns-img-col picture,
+  .columns.columns29 .columns-img-col img {
+    height: 48vw;
+    max-height: 320px;
   }
 }
