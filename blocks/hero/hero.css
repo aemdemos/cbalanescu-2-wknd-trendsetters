@@ -45,3 +45,137 @@
     padding: 40px 32px;
   }
 }
+
+.hero.hero5 {
+  display: flex;
+  flex-direction: row;
+  min-height: 600px;
+  background: none;
+  padding: 0;
+}
+
+/* Right column: image block */
+.hero.hero5 > div:first-child {
+  flex: 1 1 50%;
+  order: 2;
+  min-width: 0;
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-end;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* Make picture/image fill available space */
+.hero.hero5 picture,
+.hero.hero5 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Left column: text block */
+.hero.hero5 > div:last-child {
+  flex: 1 1 50%;
+  order: 1;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  min-height: 100%;
+  padding: 0;
+}
+
+/* Inner text container, top-aligned with reduced side padding, wider max-width */
+.hero.hero5 > div:last-child > div {
+  max-width: 640px;
+  width: 100%;
+  padding: 32px 32px 0 36px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+/* Heading styling */
+.hero.hero5 h2 {
+  color: #222;
+  font-family: var(--heading-font-family);
+  font-size: 2.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+  margin-top: 0;
+  line-height: 1.05;
+}
+
+/* Paragraph styling */
+.hero.hero5 p {
+  color: #222;
+  font-size: 1.08rem;
+  line-height: 1.6;
+  margin-bottom: 10px;
+  margin-top: 0;
+  max-width: none;
+}
+
+/* Button container horizontal alignment, tighter grouping */
+.hero.hero5 .button-container {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  margin-top: 32px;
+}
+
+/* Outlined button style for hero */
+.hero.hero5 .button-container .button {
+  background: #fff;
+  color: #222;
+  border: 1.5px solid #222;
+  border-radius: 24px;
+  font-size: 1rem;
+  padding: 11px 36px;
+  font-weight: 500;
+  box-shadow: none;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+
+.hero.hero5 .button-container .button:hover,
+.hero.hero5 .button-container .button:focus {
+  background: #222;
+  color: #fff;
+}
+
+/* Responsive stacking for mobile (vertical stack) */
+@media (width <= 900px) {
+  .hero.hero5 {
+    flex-direction: column;
+    min-height: 440px;
+  }
+
+  .hero.hero5 > div:first-child,
+  .hero.hero5 > div:last-child {
+    order: unset;
+    min-height: 260px;
+    width: 100%;
+    padding: 0;
+  }
+
+  .hero.hero5 > div:last-child > div {
+    max-width: 98vw;
+    padding: 24px 4vw 0;
+  }
+
+  .hero.hero5 picture,
+  .hero.hero5 img {
+    min-height: 260px;
+    height: 260px;
+    max-height: 350px;
+  }
+}
