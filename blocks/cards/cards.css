@@ -36,7 +36,6 @@
   margin: 0 auto;
 }
 
-/* Use grid for columns, but fill available height for balance */
 .cards.cards2 > ul {
   display: grid;
   grid-template-columns: minmax(0, 56%) minmax(0, 1fr);
@@ -45,10 +44,9 @@
   list-style: none;
   margin: 0;
   padding: 0;
-  min-height: 600px; /* helps left and right columns align vertically in most viewports */
+  min-height: 600px;
 }
 
-/* Left column: vertically center content for visual balance with right */
 .cards.cards2 > ul > li:first-child {
   grid-column: 1 / 2;
   display: flex;
@@ -58,7 +56,6 @@
   height: 100%;
 }
 
-/* Right column: stack cards vertically, stretch to grid height */
 .cards.cards2 > ul > li:not(:first-child) {
   grid-column: 2 / 3;
   width: 100%;
@@ -68,20 +65,17 @@
   background: transparent;
 }
 
-/* Remove border from all cards */
 .cards.cards2 > ul > li {
   border: none;
   background: transparent;
   box-shadow: none;
 }
 
-/* Remove divider from last right-column card */
 .cards.cards2 > ul > li:last-child {
   border-bottom: none;
   padding-bottom: 0;
 }
 
-/* Card images: rounded corners, sizing */
 .cards.cards2 .cards-card-image img {
   display: block;
   width: 100%;
@@ -91,19 +85,16 @@
   margin-bottom: 0;
 }
 
-/* Secondary image card in right column: smaller radius and max width */
 .cards.cards2 > ul > li:nth-child(2) .cards-card-image img {
   border-radius: 18px;
   max-width: 180px;
 }
 
-/* Card Body spacing */
 .cards.cards2 .cards-card-body {
   margin: 0;
   padding: 0;
 }
 
-/* Typography for main card */
 .cards.cards2 > ul > li:first-child .cards-card-body p:first-child {
   text-transform: uppercase;
   font-size: 12px;
@@ -130,7 +121,6 @@
   font-family: var(--body-font-family);
 }
 
-/* Typography for right column cards */
 .cards.cards2 > ul > li:not(:first-child) .cards-card-body h3 {
   font-family: var(--heading-font-family);
   font-size: 22px;
@@ -147,7 +137,6 @@
   font-family: var(--body-font-family);
 }
 
-/* Label style for secondary image card */
 .cards.cards2 > ul > li:nth-child(2) .cards-card-body p:first-child {
   display: inline-block;
   background: #ececec;
@@ -162,7 +151,6 @@
   margin-top: 0;
 }
 
-/* Responsive: stack columns on small screens */
 @media (width <= 900px) {
   .cards.cards2 > ul {
     display: flex;
@@ -185,5 +173,94 @@
   .cards.cards2 > ul > li:last-child {
     margin-bottom: 0;
     padding-bottom: 0;
+  }
+}
+
+
+.cards.cards7 {
+  background: #fff;
+  padding: 36px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.cards.cards7 > ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+  gap: 0; /* Cards as close as possible */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-width: 1020px; /* Allow cards to fill more horizontal space */
+  width: 100%;
+}
+
+.cards.cards7 > ul > li {
+  background: #fff;
+  border: none;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  width: 100%;
+  max-width: 340px;
+  flex: 1 1 0;
+  box-shadow: none;
+}
+
+.cards.cards7 .cards-card-image {
+  width: 100%;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  display: block;
+  background: #fff;
+}
+
+.cards.cards7 .cards-card-image picture,
+.cards.cards7 .cards-card-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.cards.cards7 .cards-card-image img {
+  object-fit: cover;
+}
+
+.cards.cards7 .cards-card-body {
+  display: none;
+}
+
+@media (width <= 1050px) {
+  .cards.cards7 > ul {
+    gap: 4px;
+    max-width: 100%;
+    padding: 0 8px;
+  }
+
+  .cards.cards7 > ul > li {
+    max-width: 98vw;
+  }
+}
+
+@media (width <= 700px) {
+  .cards.cards7 {
+    padding: 20px 0;
+  }
+
+  .cards.cards7 > ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 0 2px;
+    max-width: 100%;
+  }
+
+  .cards.cards7 > ul > li {
+    max-width: 100%;
+    width: 100%;
   }
 }
