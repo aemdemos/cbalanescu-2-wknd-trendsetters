@@ -1045,7 +1045,6 @@
   box-sizing: border-box;
 }
 
-/* Responsive stacking for mobile */
 @media (width <= 899px) {
   .columns.columns18 > div {
     grid-template-columns: 1fr;
@@ -1071,7 +1070,7 @@
   grid-column: 2;
   grid-row: 1;
   place-self: start start;
-  margin-top: 0; /* Ensures top alignment with headline */
+  margin-top: 0;
 }
 
 .columns.columns18 > div > .columns-img-col {
@@ -1080,12 +1079,10 @@
   margin-top: 72px;
 }
 
-/* Make left column (text) visually dominant */
 .columns.columns18 > div > div {
   min-width: 0;
 }
 
-/* Headline (h3): large, bold, geometric */
 .columns.columns18 > div > div h3 {
   font-size: 3.1rem;
   font-family: var(--heading-font-family);
@@ -1098,7 +1095,6 @@
   line-height: 1.08;
 }
 
-/* Subtitle (h2): small, uppercase, letter-spaced, gray */
 .columns.columns18 > div > div h2 {
   font-size: 13px;
   color: #9e9e9e;
@@ -1111,7 +1107,6 @@
   line-height: 1.4;
 }
 
-/* Body/supporting text */
 .columns.columns18 > div > div p {
   font-size: 16px;
   color: #616161;
@@ -1121,7 +1116,6 @@
   line-height: 1.5;
 }
 
-/* Image styling */
 .columns.columns18 .columns-img-col picture,
 .columns.columns18 .columns-img-col img {
   width: 100%;
@@ -1131,7 +1125,6 @@
   box-shadow: 0 2px 24px 0 rgb(20 20 20 / 8%);
 }
 
-/* Remove bullets and adjust spacing on ul in contact info */
 .columns.columns18 > div > div ul {
   list-style: none;
   margin: 0;
@@ -1143,12 +1136,10 @@
   margin-bottom: 0;
 }
 
-/* Contact rows: tighter grouping and less vertical space */
 .columns.columns18 > div > div > ul:not(:last-child) {
   margin-bottom: 16px;
 }
 
-/* Contact label styling */
 .columns.columns18 > div > div h4 {
   font-size: 12px;
   color: #9e9e9e;
@@ -1161,7 +1152,6 @@
   line-height: 1.2;
 }
 
-/* Icon inside contact info */
 .columns.columns18 > div > div ul picture {
   display: flex;
   align-items: center;
@@ -1173,7 +1163,6 @@
   flex-shrink: 0;
 }
 
-/* Contact details text (second li in each ul) */
 .columns.columns18 > div > div ul li:not(:has(picture)) {
   font-size: 16px;
   color: #212121;
@@ -1187,4 +1176,210 @@
   width: 24px;
   height: 24px;
   display: block;
+}
+
+
+.columns.columns26 {
+  background: #FAFBF9;
+  padding: 56px 0 0;
+}
+
+/* --- Main Layout: 2 Rows --- */
+.columns.columns26 > div {
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-columns: minmax(440px, 1fr) minmax(320px, 1fr);
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 0 56px;
+  align-items: start;
+  padding-bottom: 40px;
+  position: relative;
+}
+
+/* --- Top Row: Heading + Testimonial side by side --- */
+.columns.columns26 > div > div:first-child {
+  grid-row: 1;
+  grid-column: 1 / span 2;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding-bottom: 32px;
+  border-bottom: none;
+}
+
+.columns.columns26 > div > div:first-child p:first-child {
+  flex: 2 1 0;
+  font-family: Syncopate, 'Syncopate Fallback', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  color: #232323;
+  line-height: 1.05;
+  margin: 0 40px 0 0;
+  max-width: 540px;
+}
+
+.columns.columns26 > div > div:first-child p:nth-child(2) {
+  flex: 1 1 0;
+  font-family: var(--body-font-family);
+  font-size: 1rem;
+  color: #232323;
+  line-height: 1.5;
+  margin: 0;
+  align-self: flex-start;
+  max-width: 540px;
+}
+
+/* --- Divider full width below heading/testimonial --- */
+.columns.columns26 > div::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(100% - 88px); /* Adjust to sit under top row */
+  height: 1px;
+  width: 100%;
+  background: #E2E2DF;
+  z-index: 1;
+}
+
+/* --- Bottom Row: Avatar group (left) & Logo (right) --- */
+.columns.columns26 > div > div:last-child {
+  grid-row: 2;
+  grid-column: 1 / span 2;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 32px;
+  margin-top: 0;
+  gap: 48px;
+  position: relative;
+  z-index: 2;
+}
+
+/* --- Avatar block: avatar left, name/title stacked vertically --- */
+.columns.columns26 > div > div:last-child .avatar-block,
+.columns.columns26 > div > div:last-child > p:first-child {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+/* Target avatar image (first p contains picture) */
+.columns.columns26 > div > div:last-child p:first-child picture img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin-right: 16px;
+}
+
+/* --- Name and title stacked vertically next to avatar --- */
+
+/* Use a flex column for the name/title pair, leveraging adjacent siblings */
+
+.columns.columns26 > div > div:last-child p:nth-child(2),
+.columns.columns26 > div > div:last-child p:nth-child(3) {
+  margin: 0;
+  padding: 0;
+  line-height: 1.2;
+  color: #232323;
+  display: block;
+}
+
+.columns.columns26 > div > div:last-child p:nth-child(2) {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 2px;
+
+  /* to stack name and title vertically, simulate a column next to avatar */
+  position: relative;
+  left: 0;
+  top: 0;
+  display: block;
+}
+
+.columns.columns26 > div > div:last-child p:nth-child(3) {
+  font-size: 0.875rem;
+  color: #737373;
+  margin-bottom: 0;
+  position: relative;
+  left: 0;
+  top: 0;
+  display: block;
+}
+
+.columns.columns26 > div > div:last-child > p:first-child + p:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 0;
+}
+
+.columns.columns26 > div > div:last-child > p:first-child {
+  margin-right: 16px;
+}
+
+.columns.columns26 > div > div:last-child > p:nth-child(2) + p:nth-child(3) {
+  margin-left: 0;
+}
+
+/* --- Logo far right, center aligned --- */
+.columns.columns26 > div > div:last-child p:last-child {
+  margin-left: auto;
+  margin-bottom: 0;
+  display: flex;
+  align-items: center;
+}
+
+.columns.columns26 > div > div:last-child p:last-child picture img {
+  height: 27px;
+  width: auto;
+  display: block;
+}
+
+/* --- Responsive adjustments --- */
+@media (width <= 900px) {
+  .columns.columns26 > div {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    column-gap: 0;
+    padding: 0 16px 32px;
+  }
+
+  .columns.columns26 > div > div:first-child {
+    flex-direction: column;
+    padding-bottom: 24px;
+  }
+
+  .columns.columns26 > div > div:first-child p:first-child,
+  .columns.columns26 > div > div:first-child p:nth-child(2) {
+    margin: 0 0 24px;
+    max-width: 100%;
+  }
+
+  .columns.columns26 > div::after {
+    position: static;
+    margin: 24px 0;
+    height: 1px;
+  }
+
+  .columns.columns26 > div > div:last-child {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    padding-top: 28px;
+  }
+
+  .columns.columns26 > div > div:last-child p:last-child {
+    margin-left: 0;
+    align-self: flex-start;
+  }
 }
