@@ -459,12 +459,11 @@
   background: #fff;
 }
 
-/* More compact vertical and horizontal gaps for denser grouping */
 .cards.cards19 > ul {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   grid-template-rows: repeat(2, auto);
-  gap: 18px; /* 18px vertical, 18px horizontal */
+  gap: 18px;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -473,7 +472,6 @@
   max-width: 100%;
 }
 
-/* Responsive: stack to 2 columns, then 1 column */
 @media (width <= 950px) {
   .cards.cards19 > ul {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -490,7 +488,6 @@
   }
 }
 
-/* Card: horizontal icon + text, top-aligned, no border/background */
 .cards.cards19 > ul > li {
   display: flex;
   flex-direction: row;
@@ -503,7 +500,6 @@
   min-width: 0;
 }
 
-/* Icon: left, close to text */
 .cards.cards19 .cards-card-image {
   width: 22px;
   height: 22px;
@@ -516,7 +512,6 @@
   padding: 0;
 }
 
-/* Icon image: sharp, monochrome appearance */
 .cards.cards19 .cards-card-image img {
   width: 22px;
   height: 22px;
@@ -529,7 +524,6 @@
   padding: 0;
 }
 
-/* Text: wider for natural wrapping, left-aligned */
 .cards.cards19 .cards-card-body {
   flex: 1;
   max-width: 220px;
@@ -549,4 +543,135 @@
 .cards.cards19 .cards-card-body p {
   margin: 0;
   padding: 0;
+}
+
+
+.cards.cards23 ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 32px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Each card fills its grid cell */
+.cards.cards23 ul > li {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  width: 100%;
+  min-height: 0;
+  background: #fff;
+  border-radius: 20px;
+  box-sizing: border-box;
+}
+
+/* Card 1: Image card, top left */
+.cards.cards23 ul > li:nth-child(1) {
+  grid-row: 1 / 2;
+  grid-column: 1 / 2;
+  border: none;
+  overflow: hidden;
+}
+
+/* Card 2: Text card, top right */
+.cards.cards23 ul > li:nth-child(2) {
+  grid-row: 1 / 2;
+  grid-column: 2 / 3;
+  border: 2px solid #222;
+  justify-content: center;
+  align-items: center;
+  padding: 36px 28px;
+}
+
+/* Card 3: Text card, bottom left */
+.cards.cards23 ul > li:nth-child(3) {
+  grid-row: 2 / 3;
+  grid-column: 1 / 2;
+  border: 2px solid #222;
+  justify-content: center;
+  align-items: center;
+  padding: 36px 28px;
+}
+
+/* Card 4: Image card, bottom right */
+.cards.cards23 ul > li:nth-child(4) {
+  grid-row: 2 / 3;
+  grid-column: 2 / 3;
+  border: none;
+  overflow: hidden;
+}
+
+/* Image styling for image cards */
+.cards.cards23 ul > li:nth-child(1) .cards-card-image img,
+.cards.cards23 ul > li:nth-child(4) .cards-card-image img {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+  border-radius: 20px 20px 0 0;
+  display: block;
+}
+
+/* Hide image container for text-only cards */
+.cards.cards23 ul > li:nth-child(2) .cards-card-image,
+.cards.cards23 ul > li:nth-child(3) .cards-card-image {
+  display: none;
+}
+
+/* Card body padding and centering */
+.cards.cards23 .cards-card-body {
+  padding: 28px 18px 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  background: #fff;
+}
+
+/* Heading styling */
+.cards.cards23 .cards-card-body h3 {
+  font-family: var(--heading-font-family), sans-serif;
+  font-size: 1.25em;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #222;
+  margin: 0 0 8px;
+  text-align: center;
+  line-height: 1.2;
+}
+
+/* Subtitle styling */
+.cards.cards23 .cards-card-body p {
+  font-family: var(--body-font-family), sans-serif;
+  font-size: 1em;
+  font-weight: 400;
+  color: #666;
+  margin: 0;
+  text-align: center;
+}
+
+/* Responsive stacking for mobile */
+@media (width <= 900px) {
+  .cards.cards23 ul {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .cards.cards23 ul > li {
+    min-width: 100%;
+    min-height: 200px;
+    border-radius: 20px;
+    margin-bottom: 0;
+  }
+
+  .cards.cards23 ul > li .cards-card-image img {
+    height: 180px;
+    border-radius: 20px 20px 0 0;
+  }
 }
