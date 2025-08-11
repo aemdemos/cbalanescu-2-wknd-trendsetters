@@ -733,16 +733,14 @@
   padding: 0;
 }
 
-/* Two columns side by side */
 .columns.columns14 > div {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  gap: 56px; /* Moderate column separation for balance */
+  gap: 56px;
   width: 100%;
 }
 
-/* Headline column: slightly narrower for balance */
 .columns.columns14 > div > div:first-child {
   flex: 1 1 40%;
   max-width: 520px;
@@ -751,7 +749,6 @@
   justify-content: flex-start;
 }
 
-/* Headline styles */
 .columns.columns14 h2 {
   font-family: var(--heading-font-family);
   font-size: 3rem;
@@ -760,12 +757,11 @@
   color: #000;
   line-height: 1.1;
   margin: 0 0 0.5em;
-  word-break: normal; /* Replaced 'break-word' with a valid alternative */
+  word-break: normal;
   overflow-wrap: break-word;
   max-width: 100%;
 }
 
-/* Right column: allow nearly full width for text */
 .columns.columns14 > div > div:last-child {
   flex: 1 1 60%;
   min-width: 320px;
@@ -777,7 +773,6 @@
   justify-content: flex-start;
 }
 
-/* Wide paragraph lines, extremely tight spacing below */
 .columns.columns14 > div > div:last-child p:not(.button-container) {
   font-family: Arial, sans-serif;
   font-size: 1.13rem;
@@ -788,7 +783,6 @@
   width: 100%;
 }
 
-/* Button container: left align, no extra space above/below */
 .columns.columns14 .button-container {
   display: flex;
   justify-content: flex-start;
@@ -797,7 +791,6 @@
   padding: 0;
 }
 
-/* Button: outlined pill, left aligned, matches original proportions */
 .columns.columns14 .button-container .button {
   background: #fff;
   color: #232323;
@@ -816,7 +809,6 @@
   margin: 0;
 }
 
-/* Button hover/focus */
 .columns.columns14 .button-container .button:hover,
 .columns.columns14 .button-container .button:focus {
   background: #f8f8f8;
@@ -824,7 +816,6 @@
   border-color: #232323;
 }
 
-/* Responsive: stack columns and keep right column full width */
 @media (width <= 900px) {
   .columns.columns14 > div {
     flex-direction: column;
@@ -841,8 +832,129 @@
   }
 }
 
-/* Remove vertical spacing in nested divs */
 .columns.columns14 > div > div {
   margin: 0;
   padding: 0;
+}
+
+
+.columns.columns15 {
+  background: #f6f6f3;
+  padding: 64px 3vw;
+  box-sizing: border-box;
+}
+
+/* Use CSS Grid for precise vertical and horizontal centering */
+.columns.columns15 .columns-2-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 72px;
+  width: 100%;
+  min-height: 680px;
+}
+
+@media (width <= 900px) {
+  .columns.columns15 .columns-2-cols {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 32px 3vw;
+    min-height: unset;
+  }
+}
+
+/* Left column: tightly stacked and vertically centered */
+.columns.columns15 .columns-2-cols > div:first-child {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100%;
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Right column: image should fill available space and be centered */
+.columns.columns15 .columns-img-col {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+/* Make image fill column, but not overflow/rasterize */
+.columns.columns15 .columns-img-col img {
+  border-radius: 24px;
+  box-shadow: 0 4px 32px rgb(0 0 0 / 8%);
+  max-width: 700px;
+  width: 100%;
+  max-height: 480px;
+  height: auto;
+  object-fit: cover;
+  margin: 0;
+  align-self: center;
+}
+
+/* Headline styles */
+.columns.columns15 h1 {
+  font-family: var(--heading-font-family);
+  font-size: 64px;
+  color: #232323;
+  line-height: 1.1;
+  font-weight: 700;
+  margin: 0 0 32px;
+  letter-spacing: 0.01em;
+  word-break: break-word;
+}
+
+/* Subheading/description styles */
+.columns.columns15 h1 + p {
+  font-family: var(--body-font-family);
+  color: #6e6e6e;
+  font-size: 16px;
+  margin-bottom: 32px;
+  max-width: 500px;
+  line-height: 1.6;
+}
+
+/* Reduce space below the button container, add spacing above */
+.columns.columns15 .button-container {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 0;
+  margin-top: 40px;
+}
+
+/* Pill button override */
+.columns.columns15 .button-container .button {
+  padding: 12px 28px;
+  border: 1.5px solid #232323;
+  border-radius: 32px;
+  background: #fff;
+  color: #232323;
+  font-size: 16px;
+  font-family: var(--body-font-family);
+  text-decoration: none;
+  font-weight: 500;
+  box-sizing: border-box;
+  transition: background 0.2s, color 0.2s;
+  margin: 0;
+}
+
+.columns.columns15 .button-container .button:hover,
+.columns.columns15 .button-container .button:focus {
+  background: #232323;
+  color: #fff;
+}
+
+/* Fine-tune block padding for extra-large screens */
+@media (width >= 1400px) {
+  .columns.columns15 {
+    padding-left: 10vw;
+    padding-right: 10vw;
+  }
 }
