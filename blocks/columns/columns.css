@@ -1577,7 +1577,6 @@
   }
 }
 
-/* Left column: make even narrower for compact look */
 .columns.columns30 > div > div:first-child {
   flex: 0 0 155px;
   max-width: 155px;
@@ -1586,10 +1585,9 @@
   align-items: flex-start;
   gap: 28px;
   margin-top: 0;
-  padding-top: 2px; /* slight nudge for baseline alignment */
+  padding-top: 2px;
 }
 
-/* Author text */
 .columns.columns30 > div > div:first-child > p {
   color: #6C6C6C;
   font-size: 15px;
@@ -1598,7 +1596,6 @@
   margin: 0 0 18px;
 }
 
-/* Pills list */
 .columns.columns30 > div > div:first-child ul {
   list-style: none;
   padding: 0;
@@ -1623,7 +1620,6 @@
   text-align: center;
 }
 
-/* Right column */
 .columns.columns30 > div > div:last-child {
   flex: 1 1 0;
   display: flex;
@@ -1634,7 +1630,6 @@
   margin-top: 0;
 }
 
-/* Headline styles: minimal margin below, perfect top alignment */
 .columns.columns30 > div > div:last-child h2 {
   color: #222;
   font-family: var(--heading-font-family);
@@ -1643,10 +1638,8 @@
   line-height: 1;
   letter-spacing: -2px;
   margin: -6px 0 6px;
-
-  /* negative top margin nudges headline up for alignment */
   max-width: 670px;
-  overflow-wrap: break-word; /* fixed deprecated 'word-break: break-word' */
+  overflow-wrap: break-word;
   padding-top: 0;
 }
 
@@ -1659,7 +1652,6 @@
   }
 }
 
-/* Paragraphs: even tighter spacing */
 .columns.columns30 > div > div:last-child p {
   color: #222;
   font-size: 15px;
@@ -1674,8 +1666,126 @@
   margin-bottom: 0;
 }
 
-/* Ensure left and right columns are perfectly top-aligned */
 .columns.columns30 > div > div {
   margin-top: 0;
   align-self: flex-start;
+}
+
+
+.columns.columns31 {
+  background: #f9faf7;
+  padding: 0;
+  margin: 0;
+}
+
+/* Use flexbox for side by side layout, top aligned */
+.columns.columns31 > div {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  width: 100%;
+  gap: 64px; /* balanced spacing based on final screenshot */
+  box-sizing: border-box;
+}
+
+/* Let both text columns share all available space, and prevent overflow */
+.columns.columns31 > div > div {
+  flex: 1 1 0;
+  min-width: 0;
+  max-width: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* Paragraphs: allow wrapping, never truncate, tight and consistent typography */
+.columns.columns31 > div > div > p {
+  font-family: 'Instrument Sans', 'Instrument Sans Fallback', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.2;
+  color: #222;
+  margin: 0;
+  padding: 0;
+  white-space: normal;
+  overflow: visible;
+  text-overflow: unset;
+}
+
+/* Button column: shrink to content and align to top right */
+.columns.columns31 > div > div:nth-child(3) {
+  flex: 0 0 auto;
+  min-width: 120px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+
+/* Button wrapper alignment */
+.columns.columns31 .button-container {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+/* Button styling: pill shape, thin border, yellow shadow, small font, white background */
+.columns.columns31 .button-container .button {
+  background: #fff;
+  border: 1px solid #222;
+  border-radius: 23px;
+  box-shadow: 0 2px 0 0 #f6f7be;
+  color: #222;
+  font-family: 'Instrument Sans', 'Instrument Sans Fallback', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.2;
+  padding: 5px 22px;
+  text-align: center;
+  margin: 0;
+  text-decoration: none;
+  transition: box-shadow 0.2s, border-color 0.2s, color 0.2s;
+  white-space: nowrap;
+  display: inline-block;
+}
+
+/* Button hover/focus: subtle color change, maintain border and shadow */
+.columns.columns31 .button-container .button:hover,
+.columns.columns31 .button-container .button:focus {
+  background: #fff;
+  box-shadow: 0 2px 0 0 #f6f7be;
+  color: #1d3ecf;
+  border: 1px solid #1d3ecf;
+  text-decoration: underline;
+}
+
+/* Responsive: stack columns vertically and allow text wrapping on small screens */
+@media (width <= 899px) {
+  .columns.columns31 > div {
+    flex-direction: column;
+    gap: 24px;
+    align-items: stretch;
+  }
+
+  .columns.columns31 > div > div,
+  .columns.columns31 > div > div:nth-child(3) {
+    flex: unset;
+    min-width: 0;
+    max-width: unset;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .columns.columns31 > div > div > p {
+    white-space: normal;
+    overflow: visible;
+    text-overflow: unset;
+  }
+
+  .columns.columns31 .button-container {
+    justify-content: flex-start;
+    width: auto;
+  }
 }
