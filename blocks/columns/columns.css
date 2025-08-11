@@ -903,7 +903,7 @@
   font-weight: 700;
   margin: 0 0 32px;
   letter-spacing: 0.01em;
-  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .columns.columns15 h1 + p {
@@ -1184,7 +1184,6 @@
   padding: 56px 0 0;
 }
 
-/* --- Main Layout: 2 Rows --- */
 .columns.columns26 > div {
   display: grid;
   grid-template-rows: auto auto;
@@ -1197,7 +1196,6 @@
   position: relative;
 }
 
-/* --- Top Row: Heading + Testimonial side by side --- */
 .columns.columns26 > div > div:first-child {
   grid-row: 1;
   grid-column: 1 / span 2;
@@ -1232,21 +1230,19 @@
   max-width: 540px;
 }
 
-/* --- Divider full width below heading/testimonial --- */
 .columns.columns26 > div::after {
   content: "";
   display: block;
   position: absolute;
   left: 0;
   right: 0;
-  top: calc(100% - 88px); /* Adjust to sit under top row */
+  top: calc(100% - 88px);
   height: 1px;
   width: 100%;
   background: #E2E2DF;
   z-index: 1;
 }
 
-/* --- Bottom Row: Avatar group (left) & Logo (right) --- */
 .columns.columns26 > div > div:last-child {
   grid-row: 2;
   grid-column: 1 / span 2;
@@ -1261,7 +1257,6 @@
   z-index: 2;
 }
 
-/* --- Avatar block: avatar left, name/title stacked vertically --- */
 .columns.columns26 > div > div:last-child .avatar-block,
 .columns.columns26 > div > div:last-child > p:first-child {
   display: flex;
@@ -1271,7 +1266,6 @@
   padding: 0;
 }
 
-/* Target avatar image (first p contains picture) */
 .columns.columns26 > div > div:last-child p:first-child picture img {
   width: 36px;
   height: 36px;
@@ -1280,10 +1274,6 @@
   display: block;
   margin-right: 16px;
 }
-
-/* --- Name and title stacked vertically next to avatar --- */
-
-/* Use a flex column for the name/title pair, leveraging adjacent siblings */
 
 .columns.columns26 > div > div:last-child p:nth-child(2),
 .columns.columns26 > div > div:last-child p:nth-child(3) {
@@ -1298,8 +1288,6 @@
   font-size: 1rem;
   font-weight: 600;
   margin-bottom: 2px;
-
-  /* to stack name and title vertically, simulate a column next to avatar */
   position: relative;
   left: 0;
   top: 0;
@@ -1331,7 +1319,6 @@
   margin-left: 0;
 }
 
-/* --- Logo far right, center aligned --- */
 .columns.columns26 > div > div:last-child p:last-child {
   margin-left: auto;
   margin-bottom: 0;
@@ -1345,7 +1332,6 @@
   display: block;
 }
 
-/* --- Responsive adjustments --- */
 @media (width <= 900px) {
   .columns.columns26 > div {
     grid-template-columns: 1fr;
@@ -1381,5 +1367,154 @@
   .columns.columns26 > div > div:last-child p:last-child {
     margin-left: 0;
     align-self: flex-start;
+  }
+}
+
+
+.columns.columns27 {
+  background: #FAFAF6;
+  padding: 4rem 2rem;
+  display: block;
+}
+
+/* Flex layout for text and image columns, with improved gap and alignment */
+.columns.columns27 > .block.columns-2-cols > div {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: flex-start;
+  gap: 6rem; /* More generous horizontal space */
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Make both columns top-aligned */
+.columns.columns27 > .block.columns-2-cols > div > div:first-child,
+.columns.columns27 > .block.columns-2-cols > div > .columns-img-col {
+  align-self: flex-start;
+}
+
+/* Stack columns vertically on mobile */
+@media (width <= 900px) {
+  .columns.columns27 > .block.columns-2-cols > div {
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 100%;
+  }
+}
+
+/* Text column: narrower for readability */
+.columns.columns27 > .block.columns-2-cols > div > div:first-child {
+  flex: 1 1 0;
+  min-width: 0;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* Image column: portrait ratio and top-aligned */
+.columns.columns27 > .block.columns-2-cols > div > .columns-img-col {
+  flex: 1 1 0;
+  min-width: 0;
+  max-width: 440px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+/* Responsive image sizing and portrait aspect ratio */
+.columns.columns27 .columns-img-col img {
+  border-radius: 2rem;
+  width: 100%;
+  max-width: 440px;
+  height: 560px;
+  min-height: 440px;
+  aspect-ratio: 4/5;
+  object-fit: cover;
+  box-shadow: none;
+  background: none;
+  margin: 0;
+  align-self: flex-start;
+  display: block;
+}
+
+/* Typography adjustments */
+.columns.columns27 > .block.columns-2-cols > div > div:first-child > p:first-child {
+  font-size: 0.85rem;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.columns.columns27 > .block.columns-2-cols > div > div:first-child > h2 {
+  font-family: Montserrat, Futura, Arial, sans-serif;
+  font-size: 4rem;
+  font-weight: 300;
+  color: #191919;
+  line-height: 1.05;
+  letter-spacing: 0.01em;
+  margin: 0 0 2rem;
+  text-transform: none;
+}
+
+.columns.columns27 > .block.columns-2-cols > div > div:first-child > p:nth-child(3) {
+  font-size: 1.15rem;
+  color: #222;
+  margin-bottom: 1.5rem;
+  line-height: 1.7;
+}
+
+.columns.columns27 > .block.columns-2-cols > div > div:first-child > p:nth-child(4) {
+  font-size: 0.95rem;
+  color: #888;
+  margin-bottom: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Button styling and spacing improvements */
+.columns.columns27 .button-container .button {
+  background: #fff;
+  color: #191919;
+  border: 1px solid #222;
+  border-radius: 2rem;
+  padding: 0.5em 1.5em;
+  font-size: 1rem;
+  font-family: inherit;
+  font-weight: 500;
+  box-shadow: none;
+  transition: box-shadow 0.2s;
+  margin: 0.1em 0 0;
+}
+
+.columns.columns27 .button-container .button:hover,
+.columns.columns27 .button-container .button:focus {
+  box-shadow: 0 2px 8px rgb(34 34 34 / 7%);
+  background: #f5f5f5;
+  color: #191919;
+  border-color: #191919;
+}
+
+/* Responsive tweaks for mobile */
+@media (width <= 600px) {
+  .columns.columns27 {
+    padding: 2rem 1rem;
+  }
+
+  .columns.columns27 > .block.columns-2-cols > div > div:first-child,
+  .columns.columns27 > .block.columns-2-cols > div > .columns-img-col {
+    max-width: 100%;
+  }
+
+  .columns.columns27 .columns-img-col img {
+    max-width: 100vw;
+    height: auto;
+    aspect-ratio: unset;
+    border-radius: 1.5rem;
   }
 }
