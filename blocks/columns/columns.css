@@ -1520,7 +1520,7 @@
   padding: 0;
   margin: 0;
   min-height: 0;
-  height: 38vw; /* Responsive vertical fill, visually matches original */
+  height: 38vw;
   max-height: 540px;
 }
 
@@ -1541,7 +1541,6 @@
   background: #eee;
 }
 
-/* Responsive: stack vertically and adjust height on small screens */
 @media (width <= 900px) {
   .columns.columns29 > div {
     flex-direction: column;
@@ -1555,4 +1554,128 @@
     height: 48vw;
     max-height: 320px;
   }
+}
+
+
+.columns.columns30 > div {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 64px 0 0;
+  gap: 4vw;
+}
+
+@media (width <= 900px) {
+  .columns.columns30 > div {
+    flex-direction: column;
+    gap: 36px;
+    padding-top: 36px;
+    padding-bottom: 0;
+  }
+}
+
+/* Left column: make even narrower for compact look */
+.columns.columns30 > div > div:first-child {
+  flex: 0 0 155px;
+  max-width: 155px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 28px;
+  margin-top: 0;
+  padding-top: 2px; /* slight nudge for baseline alignment */
+}
+
+/* Author text */
+.columns.columns30 > div > div:first-child > p {
+  color: #6C6C6C;
+  font-size: 15px;
+  font-family: var(--body-font-family);
+  font-weight: 400;
+  margin: 0 0 18px;
+}
+
+/* Pills list */
+.columns.columns30 > div > div:first-child ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.columns.columns30 > div > div:first-child ul li {
+  background: #F3F3F3;
+  color: #6C6C6C;
+  border-radius: 22px;
+  font-size: 12px;
+  font-family: var(--body-font-family);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 6px 14px;
+  margin: 0;
+  display: inline-block;
+  text-align: center;
+}
+
+/* Right column */
+.columns.columns30 > div > div:last-child {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+  min-width: 0;
+  margin-top: 0;
+}
+
+/* Headline styles: minimal margin below, perfect top alignment */
+.columns.columns30 > div > div:last-child h2 {
+  color: #222;
+  font-family: var(--heading-font-family);
+  font-size: 80px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -2px;
+  margin: -6px 0 6px;
+
+  /* negative top margin nudges headline up for alignment */
+  max-width: 670px;
+  overflow-wrap: break-word; /* fixed deprecated 'word-break: break-word' */
+  padding-top: 0;
+}
+
+@media (width <= 900px) {
+  .columns.columns30 > div > div:last-child h2 {
+    font-size: 42px;
+    letter-spacing: -1px;
+    max-width: 98vw;
+    margin: -2px 0 4px;
+  }
+}
+
+/* Paragraphs: even tighter spacing */
+.columns.columns30 > div > div:last-child p {
+  color: #222;
+  font-size: 15px;
+  font-family: var(--body-font-family);
+  font-weight: 400;
+  line-height: 1.6;
+  margin: 0 0 5px;
+  max-width: 600px;
+}
+
+.columns.columns30 > div > div:last-child p:last-child {
+  margin-bottom: 0;
+}
+
+/* Ensure left and right columns are perfectly top-aligned */
+.columns.columns30 > div > div {
+  margin-top: 0;
+  align-self: flex-start;
 }
