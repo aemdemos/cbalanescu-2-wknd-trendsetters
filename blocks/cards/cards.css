@@ -733,7 +733,6 @@
   line-height: 1.2;
 }
 
-/* Tag+Date baseline alignment: flex row */
 .cards.cards24 .cards-card-body p:nth-child(-n+2) {
   display: inline-flex;
   flex-direction: row;
@@ -742,7 +741,6 @@
   line-height: 1.1;
 }
 
-/* Group tag and date in a visual row */
 .cards.cards24 .cards-card-body p:first-child {
   background: #E1E1E1;
   color: #222;
@@ -769,7 +767,6 @@
   max-width: 100%;
 }
 
-/* Title styling/tight spacing/bold */
 .cards.cards24 .cards-card-body h3 {
   margin: 4px 0 0;
   font-family: Montserrat, Arial, Helvetica, sans-serif;
@@ -779,13 +776,10 @@
   letter-spacing: 0.05em;
   color: #222;
   line-height: 1.13;
-  word-break: break-word;
+  overflow-wrap: break-word; /* Replaced deprecated 'word-break: break-word' */
   text-align: left;
 }
 
-/* Remove extra vertical space at bottom of cards */
-
-/* Responsive: horizontal scroll for overflow */
 @media (width <= 1150px) {
   .cards.cards24 > ul {
     overflow-x: auto;
@@ -820,4 +814,198 @@
     font-size: 18px;
     margin-top: 6px;
   }
+}
+
+
+.cards.cards33 {
+  background: #f7f7f7;
+  padding: 24px 0 32px;
+}
+
+/* Grid: more compact, fills container better */
+.cards.cards33 > ul {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px 16px;
+  place-items: stretch stretch;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+}
+
+/* Responsive: stack cards vertically */
+@media (width <= 900px) {
+  .cards.cards33 > ul {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    max-width: 100%;
+    padding: 0 4px;
+  }
+}
+
+/* Card: shorter, more rounded, minimal shadow */
+.cards.cards33 > ul > li {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 2px 6px rgb(0 0 0 / 2%);
+  min-height: 148px;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+/* Responsive: column layout for card */
+@media (width <= 900px) {
+  .cards.cards33 > ul > li {
+    flex-direction: column;
+    min-height: 0;
+  }
+}
+
+.cards.cards33 > ul > li:nth-child(2n) {
+  flex-direction: row-reverse;
+}
+
+@media (width <= 900px) {
+  .cards.cards33 > ul > li:nth-child(2n) {
+    flex-direction: column;
+  }
+}
+
+/* Image: more dominant */
+.cards.cards33 .cards-card-image {
+  flex: 0 0 58%;
+  min-width: 210px;
+  max-width: 58%;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  background: none;
+  padding: 0;
+  margin: 0;
+  border-radius: 18px 0 0 18px;
+  overflow: hidden;
+}
+
+.cards.cards33 > ul > li:nth-child(2n) .cards-card-image {
+  border-radius: 0 18px 18px 0;
+}
+
+@media (width <= 900px) {
+  .cards.cards33 .cards-card-image,
+  .cards.cards33 > ul > li:nth-child(2n) .cards-card-image {
+    border-radius: 18px 18px 0 0;
+    max-width: 100%;
+    min-width: 0;
+    width: 100%;
+  }
+}
+
+.cards.cards33 .cards-card-image img {
+  width: 100%;
+  height: 100%;
+  min-height: 110px;
+  object-fit: cover;
+  border-radius: 0;
+  display: block;
+}
+
+@media (width <= 900px) {
+  .cards.cards33 .cards-card-image img {
+    min-height: 70px;
+    border-radius: 18px 18px 0 0;
+  }
+}
+
+/* Card body: tighter, low vertical padding, compact block */
+.cards.cards33 .cards-card-body {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 0;
+  padding: 14px 14px 13px;
+  margin: 0;
+}
+
+@media (width <= 900px) {
+  .cards.cards33 .cards-card-body {
+    padding: 8px 7px 9px;
+  }
+}
+
+/* Meta row: always inline, same font, very compact */
+.cards.cards33 .cards-card-body p:first-child,
+.cards.cards33 .cards-card-body p:nth-child(2) {
+  display: inline-block;
+  vertical-align: middle;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 11px;
+  line-height: 1.08;
+  height: 22px;
+}
+
+.cards.cards33 .cards-card-body p:first-child {
+  background: #f1f1f1;
+  color: #222;
+  font-weight: 600;
+  text-transform: uppercase;
+  border-radius: 9px;
+  letter-spacing: 0.5px;
+  padding: 2px 8px;
+  margin-right: 5px;
+}
+
+.cards.cards33 .cards-card-body p:nth-child(2) {
+  color: #757575;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
+/* Heading: minimized margins, tight line-height */
+.cards.cards33 .cards-card-body h3 {
+  font-size: 20px;
+  font-family: var(--heading-font-family);
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  margin: 5px 0 4px;
+  color: #181818;
+  line-height: 1.06;
+  overflow-wrap: break-word; /* Replaced deprecated 'word-break: break-word' */
+}
+
+/* Description: very compact spacing */
+.cards.cards33 .cards-card-body h3 + p {
+  font-size: 14.5px;
+  color: #444;
+  margin: 0 0 6px;
+  line-height: 1.29;
+}
+
+/* Read link: no extra margin */
+.cards.cards33 .cards-card-body p:last-child {
+  color: #181818;
+  font-weight: 700;
+  font-size: 13.5px;
+  letter-spacing: 0.01em;
+  text-decoration: underline;
+  cursor: pointer;
+  margin: 0;
+  align-self: flex-start;
+}
+
+/* Remove unwanted margin/padding */
+.cards.cards33 ul,
+.cards.cards33 li,
+.cards.cards33 p {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0;
 }
