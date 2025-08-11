@@ -1009,7 +1009,6 @@
   padding: 0;
 }
 
-/* Main 2-column layout */
 .cards.cards37 > ul {
   display: flex;
   flex-direction: row;
@@ -1023,7 +1022,6 @@
   padding: 0;
 }
 
-/* Responsive: stack columns on mobile */
 @media (width <= 900px) {
   .cards.cards37 > ul {
     flex-direction: column;
@@ -1032,7 +1030,6 @@
   }
 }
 
-/* Left column: large image and text */
 .cards.cards37 > ul > li:first-child {
   flex: 0 1 60%;
   max-width: 670px;
@@ -1104,9 +1101,6 @@
   transition: background 0.15s;
 }
 
-/* --- RIGHT COLUMN --- */
-
-/* Use grid for vertical balancing between image and card body */
 .cards.cards37 > ul > li:last-child {
   flex: 0 1 40%;
   max-width: 420px;
@@ -1120,7 +1114,6 @@
   height: auto;
 }
 
-/* Responsive: stack right blocks on mobile */
 @media (width <= 900px) {
   .cards.cards37 > ul > li:last-child {
     display: flex;
@@ -1139,7 +1132,6 @@
   }
 }
 
-/* Top-right image: larger, fill row, visually separate */
 .cards.cards37 > ul > li:last-child .cards-card-image {
   width: 100%;
   height: 100%;
@@ -1164,7 +1156,6 @@
   background: #f7f8f5;
 }
 
-/* Card body: fills rest of right column, visually grouped */
 .cards.cards37 > ul > li:last-child .cards-card-body {
   margin: 0;
   padding: 28px 22px 18px;
@@ -1202,7 +1193,6 @@
   width: 100%;
 }
 
-/* Remove default border/background from all li and inner blocks */
 .cards.cards37 > ul > li,
 .cards.cards37 > ul > li .cards-card-body,
 .cards.cards37 > ul > li .cards-card-image {
@@ -1211,10 +1201,161 @@
   box-shadow: none;
 }
 
-/* Remove vertical stacking or grid on the left card body */
 .cards.cards37 > ul > li:first-child .cards-card-image,
 .cards.cards37 > ul > li:first-child .cards-card-body {
   background: none;
   box-shadow: none;
   border: none;
+}
+
+
+.cards.cards25 > ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 36px 28px; /* More vertical gap for airy look */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Top row: side-by-side cards */
+.cards.cards25 > ul > li:nth-child(1),
+.cards.cards25 > ul > li:nth-child(2) {
+  grid-row: 1;
+}
+
+/* Bottom row: third card spans both columns */
+.cards.cards25 > ul > li:nth-child(3) {
+  grid-column: 1 / span 2;
+  grid-row: 2;
+  position: relative;
+}
+
+/* Card base styling: more pronounced shadow, more float */
+.cards.cards25 > ul > li {
+  background: #fff;
+  border-radius: 30px;
+  box-shadow: 0 8px 38px 0 rgb(0 0 0 / 12%);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Card image: even less height/aspect-ratio for letterbox look */
+.cards.cards25 .cards-card-image {
+  width: 100%;
+  height: 112px;
+  aspect-ratio: 16/7;
+  overflow: hidden;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  background: #ccc;
+  margin: 0;
+}
+
+.cards.cards25 .cards-card-image img,
+.cards.cards25 .cards-card-image picture {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* FIRST TWO CARDS: Add a bit more vertical padding for relaxed rhythm */
+.cards.cards25 > ul > li:nth-child(1) .cards-card-body,
+.cards.cards25 > ul > li:nth-child(2) .cards-card-body {
+  position: static;
+  background: #fff;
+  padding: 20px 32px 18px;
+  margin: 0;
+  color: #222;
+  box-shadow: none;
+}
+
+.cards.cards25 > ul > li:nth-child(1) .cards-card-body p,
+.cards.cards25 > ul > li:nth-child(2) .cards-card-body p {
+  line-height: 1.38;
+  font-size: 1.02rem;
+}
+
+/* THIRD CARD: Overlay text top-left, overlay hugs text and is more opaque */
+
+.cards.cards25 > ul > li:nth-child(3) .cards-card-body {
+  position: absolute;
+  top: 8px;
+  left: 12px;
+  background: rgb(255 255 255 / 93%);
+  border-radius: 13px;
+  box-shadow: 0 2px 16px rgb(0 0 0 / 10%);
+  padding: 10px 16px 8px;
+  color: #222;
+  min-width: 180px;
+  max-width: 360px;
+  z-index: 2;
+  margin: 0;
+  line-height: 1.18;
+}
+
+/* Typography: slightly tighter, but readable */
+.cards.cards25 .cards-card-body h3 {
+  font-family: var(--heading-font-family);
+  font-weight: 600;
+  font-size: 1.6rem;
+  letter-spacing: 0.01em;
+  margin: 0 0 0.16em;
+  color: #222;
+  background: none;
+  line-height: 1.06;
+}
+
+.cards.cards25 > ul > li:nth-child(2) .cards-card-body h3 {
+  color: #7a6c5d;
+}
+
+.cards.cards25 .cards-card-body p {
+  font-size: 0.97rem;
+  color: #888;
+  margin: 0.07em 0 0;
+  background: none;
+  line-height: 1.24;
+}
+
+/* Responsive: stack cards vertically, overlay and card-body remain tight */
+@media (width <= 900px) {
+  .cards.cards25 > ul {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 18px;
+  }
+
+  .cards.cards25 > ul > li,
+  .cards.cards25 > ul > li:nth-child(3) {
+    grid-column: 1;
+    width: 100%;
+  }
+
+  .cards.cards25 .cards-card-image {
+    height: 66px;
+    aspect-ratio: 16/7;
+  }
+
+  .cards.cards25 .cards-card-body,
+  .cards.cards25 > ul > li:nth-child(3) .cards-card-body {
+    padding: 12px 12px 7px;
+    left: 6px;
+    right: 6px;
+    max-width: calc(100% - 12px);
+  }
+
+  .cards.cards25 > ul > li:nth-child(3) .cards-card-body {
+    top: 4px;
+    left: 6px;
+    min-width: 100px;
+    max-width: 96vw;
+    padding: 7px 10px 6px;
+  }
 }
