@@ -1817,7 +1817,6 @@
   }
 }
 
-/* Left image column */
 .columns.columns32 .columns-img-col {
   max-width: 480px;
   width: 100%;
@@ -1832,7 +1831,6 @@
   display: block;
 }
 
-/* Right column: stack vertically, but metadata and byline as flex row */
 .columns.columns32 > div > div:nth-child(2) {
   display: flex;
   flex-direction: column;
@@ -1840,7 +1838,6 @@
   min-width: 0;
 }
 
-/* --- Metadata row: first two p's side by side and centered --- */
 .columns.columns32 > div > div:nth-child(2) .columns32-meta-row,
 .columns.columns32 > div > div:nth-child(2) .meta-row {
   display: flex;
@@ -1879,7 +1876,6 @@
   box-shadow: none;
 }
 
-/* --- Headline --- */
 .columns.columns32 > div > div:nth-child(2) h2 {
   font-family: var(--heading-font-family);
   font-size: 44px;
@@ -1890,9 +1886,9 @@
   letter-spacing: 0.01em;
   text-transform: none;
   word-break: break-word;
+  overflow-wrap: break-word; /* Added as a replacement for the deprecated keyword */
 }
 
-/* --- Byline: all byline p's in a flex row below headline --- */
 .columns.columns32 > div > div:nth-child(2) .columns32-byline,
 .columns.columns32 > div > div:nth-child(2) .byline-row {
   display: flex;
@@ -1902,7 +1898,6 @@
   margin: 0;
 }
 
-/* Selector hack for byline row with no extra container: apply to each byline p */
 .columns.columns32 > div > div:nth-child(2) > p:nth-child(4),
 .columns.columns32 > div > div:nth-child(2) > p:nth-child(5),
 .columns.columns32 > div > div:nth-child(2) > p:nth-child(6),
@@ -1925,12 +1920,189 @@
   margin: 0 4px;
 }
 
-/* Remove trailing margin from last byline element */
 .columns.columns32 > div > div:nth-child(2) > p:nth-child(8) {
   margin-right: 0;
 }
 
-/* Ensure vertical stacking of block children except for those flex rows */
 .columns.columns32 > div > div:nth-child(2) > *:not(:nth-child(1), :nth-child(2), h2, :nth-child(4), :nth-child(5), :nth-child(6), :nth-child(7), :nth-child(8)) {
   margin-top: 0.7em;
+}
+
+
+.columns.columns36 {
+  background: #fcfcf8;
+  padding-top: 88px;
+  padding-bottom: 68px;
+}
+
+/* Main layout adjustment: increase column gap to prevent image overlap */
+.columns.columns36 > div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  max-width: 1480px;
+  margin: 0 auto;
+  gap: 108px; /* More generous gap between text block and image cards */
+}
+
+/* Responsive adjustments for main container */
+@media (width <= 1300px) {
+  .columns.columns36 > div {
+    gap: 56px;
+    max-width: 100vw;
+    padding: 0 14px;
+  }
+}
+
+@media (width <= 900px) {
+  .columns.columns36 > div {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 44px;
+    max-width: 100vw;
+    padding: 0 10px;
+  }
+
+  .columns.columns36 .columns-img-col p {
+    overflow-x: auto;
+    justify-content: flex-start;
+  }
+}
+
+/* Text column: restrict headline and paragraph width for lighter layout */
+.columns.columns36 > div > div:first-child {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  min-width: 0;
+  flex: 1 1 0%;
+  max-width: 440px;
+}
+
+/* Headline style */
+.columns.columns36 h1 {
+  font-family: var(--heading-font-family);
+  font-size: 90px;
+  font-weight: 600;
+  line-height: 0.99;
+  letter-spacing: 1px;
+  color: #232323;
+  margin: 0 0 0.02em;
+  max-width: 420px;
+}
+
+@media (width <= 1200px) {
+  .columns.columns36 h1 {
+    font-size: 56px;
+    max-width: 300px;
+  }
+}
+
+@media (width <= 900px) {
+  .columns.columns36 h1 {
+    font-size: 40px;
+    max-width: 100%;
+    margin-bottom: 0;
+  }
+}
+
+/* Paragraph style */
+.columns.columns36 p:not(.button-container) {
+  font-size: 17px;
+  color: #7A7A7A;
+  margin-bottom: 0;
+  margin-top: 10px;
+  max-width: 420px;
+  line-height: 1.5;
+}
+
+/* Button alignment and simulated double pills */
+.columns.columns36 .button-container {
+  margin-top: 16px;
+  margin-bottom: 0;
+  display: flex;
+  gap: 16px;
+}
+
+.columns.columns36 .button-container .button {
+  font-size: 17px;
+  line-height: 1.2;
+  padding: 14px 44px 14px 30px; /* More horizontal padding for pill effect */
+  border: 2px solid #232323;
+  background: none;
+  color: #232323;
+  border-radius: 40px;
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  font-weight: 500;
+  transition: background 0.2s, color 0.2s;
+
+  /* Simulate two pills: add box-shadow to right for visual separation */
+  box-shadow: 22px 0 0 #fcfcf8;
+}
+
+/* Image cards row: increase gap to separate cards more */
+.columns.columns36 .columns-img-col p {
+  display: flex;
+  flex-direction: row;
+  gap: 36px;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  min-width: 0;
+  width: auto;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Individual card styling: slightly reduce size for better fit and balance */
+.columns.columns36 .columns-img-col picture {
+  display: block;
+  width: 205px;
+  height: 332px;
+  border-radius: 26px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 8px 38px 0 rgb(36 36 36 / 10%);
+  flex-shrink: 0;
+}
+
+@media (width <= 1200px) {
+  .columns.columns36 .columns-img-col picture {
+    width: 140px;
+    height: 200px;
+    border-radius: 18px;
+  }
+}
+
+@media (width <= 900px) {
+  .columns.columns36 .columns-img-col p {
+    gap: 12px;
+    width: auto;
+  }
+
+  .columns.columns36 .columns-img-col picture {
+    width: 96px;
+    height: 130px;
+    border-radius: 11px;
+  }
+}
+
+.columns.columns36 .columns-img-col img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 26px;
+  box-shadow: none;
+}
+
+/* For very large screens, keep whitespace balanced */
+@media (width >= 1480px) {
+  .columns.columns36 > div {
+    max-width: 1480px;
+  }
 }
