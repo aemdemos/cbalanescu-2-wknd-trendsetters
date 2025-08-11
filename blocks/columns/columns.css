@@ -546,26 +546,20 @@
 
 
 .columns.columns11 {
-  /* Tighter vertical gap between rows */
   display: grid;
   grid-template-rows: auto auto;
   row-gap: 28px;
   padding: 48px 0;
 }
 
-/* Top row: headline (left), supporting content (right), side by side
-   Vertically center the supporting info relative to the headline */
 .columns.columns11 > div {
   display: flex;
   flex-direction: row;
   gap: 40px;
   align-items: center;
-
-  /* Use large min-height so vertical centering works even with tall headlines */
   min-height: 500px;
 }
 
-/* Responsive stacking on small screens */
 @media (width <= 900px) {
   .columns.columns11 > div {
     flex-direction: column;
@@ -580,7 +574,6 @@
   }
 }
 
-/* --- Left column: headline and label --- */
 .columns.columns11 > div > div:first-child {
   display: flex;
   flex-direction: column;
@@ -614,7 +607,6 @@
   }
 }
 
-/* --- Right column: supporting info --- */
 .columns.columns11 > div > div:last-child {
   display: flex;
   flex-direction: column;
@@ -624,7 +616,6 @@
   justify-content: center;
 }
 
-/* Description paragraph */
 .columns.columns11 > div > div:last-child > p:first-child {
   color: #444;
   font-size: 18px;
@@ -632,9 +623,6 @@
   margin: 0 0 2px;
 }
 
-/* --- Author info row: avatar, name, date, dot, read time, tightly grouped inline --- */
-
-/* Simulate author horizontal row by making all meta p's inline-flex and removing vertical gaps */
 .columns.columns11 > div > div:last-child > p:nth-child(2),
 .columns.columns11 > div > div:last-child > p:nth-child(3),
 .columns.columns11 > div > div:last-child > p:nth-child(4),
@@ -651,7 +639,6 @@
   line-height: 1.2;
 }
 
-/* Avatar sizing and alignment */
 .columns.columns11 > div > div:last-child > p:nth-child(2) picture img {
   width: 22px;
   height: 22px;
@@ -662,18 +649,15 @@
   margin-right: 7px;
 }
 
-/* Remove right margin for last meta item */
 .columns.columns11 > div > div:last-child > p:nth-child(6) {
   margin-right: 0;
 }
 
-/* --- Button container: keep button close to author info --- */
 .columns.columns11 > div > div:last-child .button-container {
   margin-top: 2px;
   margin-bottom: 0;
 }
 
-/* Button styling: outlined pill, small font */
 .columns.columns11 .button-container .button {
   border: 1px solid #151515;
   background: #fff;
@@ -695,7 +679,6 @@
   text-decoration: none;
 }
 
-/* --- Bottom row: images side by side, equal size, tighter gap --- */
 .columns.columns11 > div + div {
   display: flex;
   flex-direction: row;
@@ -710,7 +693,6 @@
   }
 }
 
-/* Both images equal width and aspect ratio */
 .columns.columns11 .columns-img-col {
   flex: 1 1 0;
   display: flex;
@@ -736,11 +718,131 @@
   }
 }
 
-/* --- Reduce overall block max-width for tighter look on very large screens --- */
 @media (width >= 1400px) {
   .columns.columns11 {
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
   }
+}
+
+
+.columns.columns14 {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Two columns side by side */
+.columns.columns14 > div {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 56px; /* Moderate column separation for balance */
+  width: 100%;
+}
+
+/* Headline column: slightly narrower for balance */
+.columns.columns14 > div > div:first-child {
+  flex: 1 1 40%;
+  max-width: 520px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* Headline styles */
+.columns.columns14 h2 {
+  font-family: var(--heading-font-family);
+  font-size: 3rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: #000;
+  line-height: 1.1;
+  margin: 0 0 0.5em;
+  word-break: normal; /* Replaced 'break-word' with a valid alternative */
+  overflow-wrap: break-word;
+  max-width: 100%;
+}
+
+/* Right column: allow nearly full width for text */
+.columns.columns14 > div > div:last-child {
+  flex: 1 1 60%;
+  min-width: 320px;
+  max-width: 780px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+/* Wide paragraph lines, extremely tight spacing below */
+.columns.columns14 > div > div:last-child p:not(.button-container) {
+  font-family: Arial, sans-serif;
+  font-size: 1.13rem;
+  color: #232323;
+  line-height: 1.45;
+  margin: 0 0 2px;
+  max-width: 720px;
+  width: 100%;
+}
+
+/* Button container: left align, no extra space above/below */
+.columns.columns14 .button-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin: 0;
+  padding: 0;
+}
+
+/* Button: outlined pill, left aligned, matches original proportions */
+.columns.columns14 .button-container .button {
+  background: #fff;
+  color: #232323;
+  border: 1px solid #000;
+  border-radius: 24px;
+  padding: 8px 28px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  font-weight: 400;
+  line-height: 1.25;
+  box-shadow: none;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border 0.2s;
+  margin: 0;
+}
+
+/* Button hover/focus */
+.columns.columns14 .button-container .button:hover,
+.columns.columns14 .button-container .button:focus {
+  background: #f8f8f8;
+  color: #000;
+  border-color: #232323;
+}
+
+/* Responsive: stack columns and keep right column full width */
+@media (width <= 900px) {
+  .columns.columns14 > div {
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .columns.columns14 h2 {
+    font-size: 2.2rem;
+  }
+
+  .columns.columns14 > div > div:last-child {
+    max-width: 100%;
+    min-width: unset;
+  }
+}
+
+/* Remove vertical spacing in nested divs */
+.columns.columns14 > div > div {
+  margin: 0;
+  padding: 0;
 }
