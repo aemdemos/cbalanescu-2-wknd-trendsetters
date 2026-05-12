@@ -1,2 +1,4 @@
 mountpoints:
-  /: https://content.da.live/aemdemos/cbalanescu-2-wknd-trendsetters/
+  /:
+    url: https://content.da.live/aemdemos/cbalanescu-2-wknd-trendsetters/
+    type: markup
