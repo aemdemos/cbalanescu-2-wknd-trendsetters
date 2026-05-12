@@ -1,0 +1,44 @@
+{
+  "variantName": "hero-blog",
+  "baseBlock": "hero",
+  "version": "1.0.0",
+  "created": "2026-05-11T14:32:16.000Z",
+
+  "sourceContext": {
+    "originUrl": "https://wknd-trendsetters.pages.dev/blog",
+    "originPage": "blog listing / index page",
+    "blockPosition": "top"
+  },
+
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "blog-hero",
+    "imagePattern": "single-side-image"
+  },
+
+  "contentPattern": {
+    "structure": "heading + subheading + 2 CTAs on left column, 1 cover image on right column",
+    "buttonCount": 2,
+    "imageCount": 1
+  },
+
+  "reuseGuidance": {
+    "suitableFor": [
+      "blog index / listing page intros with text + single feature image",
+      "section landing pages with a side-by-side text-and-image layout",
+      "category / topic landing page intros"
+    ],
+    "notSuitableFor": [
+      "full-bleed image banners with text overlay (use hero-banner)",
+      "homepage hero with stacked image gallery (use hero-trendsetters)",
+      "simple text-only hero sections"
+    ]
+  },
+
+  "usage": {
+    "pagesUsing": ["/blog"],
+    "reuseCount": 1,
+    "lastUsed": "2026-05-11T14:32:16.000Z"
+  }
+}

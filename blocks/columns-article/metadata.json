@@ -1,0 +1,44 @@
+{
+  "variantName": "columns-article",
+  "baseBlock": "columns",
+  "version": "1.0.0",
+  "created": "2026-05-11T14:32:30.000Z",
+
+  "sourceContext": {
+    "originUrl": "https://wknd-trendsetters.pages.dev/blog",
+    "originPage": "blog listing / featured article section",
+    "blockPosition": "middle"
+  },
+
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "normal",
+    "purpose": "featured-article",
+    "imagePattern": "single-side-image"
+  },
+
+  "contentPattern": {
+    "structure": "2 columns: large image on left, text content (tag + date + heading + paragraph + button) on right",
+    "buttonCount": 1,
+    "imageCount": 1
+  },
+
+  "reuseGuidance": {
+    "suitableFor": [
+      "featured / highlighted single article with image + text",
+      "any side-by-side image + content layout for article storytelling",
+      "simple 2-column informational layouts"
+    ],
+    "notSuitableFor": [
+      "image-only galleries",
+      "repeating card grids (use cards-article or cards-trend)",
+      "contact or form columns (use columns-contact)"
+    ]
+  },
+
+  "usage": {
+    "pagesUsing": ["/blog"],
+    "reuseCount": 1,
+    "lastUsed": "2026-05-11T14:32:30.000Z"
+  }
+}

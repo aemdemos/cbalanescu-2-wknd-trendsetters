@@ -1,0 +1,47 @@
+.hero-blog-post-container .hero-blog-post-wrapper {
+  max-width: unset;
+  padding: 0;
+}
+
+.hero-blog-post {
+  position: relative;
+  padding: 40px 24px;
+  min-height: 300px;
+}
+
+.hero-blog-post h1,
+.hero-blog-post h2,
+.hero-blog-post h3,
+.hero-blog-post h4,
+.hero-blog-post h5,
+.hero-blog-post h6,
+.hero-blog-post p {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--background-color);
+}
+
+.hero-blog-post.no-image * {
+  color: var(--text-color);
+}
+
+.hero-blog-post picture {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  object-fit: cover;
+  box-sizing: border-box;
+}
+
+.hero-blog-post img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+@media (width >= 900px) {
+  .hero-blog-post {
+    padding: 40px 32px;
+  }
+}

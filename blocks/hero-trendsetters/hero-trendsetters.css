@@ -1,0 +1,47 @@
+.hero-trendsetters-container .hero-trendsetters-wrapper {
+  max-width: unset;
+  padding: 0;
+}
+
+.hero-trendsetters {
+  position: relative;
+  padding: 40px 24px;
+  min-height: 300px;
+}
+
+.hero-trendsetters h1,
+.hero-trendsetters h2,
+.hero-trendsetters h3,
+.hero-trendsetters h4,
+.hero-trendsetters h5,
+.hero-trendsetters h6,
+.hero-trendsetters p {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--background-color);
+}
+
+.hero-trendsetters.no-image * {
+  color: var(--text-color);
+}
+
+.hero-trendsetters picture {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  object-fit: cover;
+  box-sizing: border-box;
+}
+
+.hero-trendsetters img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+@media (width >= 900px) {
+  .hero-trendsetters {
+    padding: 40px 32px;
+  }
+}

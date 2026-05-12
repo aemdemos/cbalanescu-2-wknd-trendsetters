@@ -1,0 +1,43 @@
+{
+  "variantName": "tabs-testimonial",
+  "baseBlock": "tabs",
+  "version": "1.0.0",
+  "created": "2026-05-11T14:15:00.000Z",
+
+  "sourceContext": {
+    "originUrl": "https://wknd-trendsetters.pages.dev/",
+    "originPage": "home / landing page",
+    "blockPosition": "middle"
+  },
+
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "testimonial-tabs",
+    "imagePattern": "avatar-labels-with-portrait-content"
+  },
+
+  "contentPattern": {
+    "structure": "tab labels contain avatar + name + role; tab panels show large portrait + name + role + quote",
+    "buttonCount": 0,
+    "imageCount": 8
+  },
+
+  "reuseGuidance": {
+    "suitableFor": [
+      "testimonial sections with multiple people",
+      "team member showcases with quotes",
+      "user-story spotlights with portraits"
+    ],
+    "notSuitableFor": [
+      "plain content switcher tabs",
+      "step-by-step tutorials"
+    ]
+  },
+
+  "usage": {
+    "pagesUsing": ["/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-05-11T14:15:00.000Z"
+  }
+}

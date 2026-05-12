@@ -1,0 +1,43 @@
+{
+  "variantName": "hero-trendsetters",
+  "baseBlock": "hero",
+  "version": "1.0.0",
+  "created": "2026-05-11T14:15:00.000Z",
+
+  "sourceContext": {
+    "originUrl": "https://wknd-trendsetters.pages.dev/",
+    "originPage": "home / landing page",
+    "blockPosition": "top"
+  },
+
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "landing-hero",
+    "imagePattern": "stacked-side-images"
+  },
+
+  "contentPattern": {
+    "structure": "heading + subheading + 2 CTAs on left column, 3 stacked cover images on right column",
+    "buttonCount": 2,
+    "imageCount": 3
+  },
+
+  "reuseGuidance": {
+    "suitableFor": [
+      "homepage hero with text + multiple supporting images",
+      "landing page intros with image gallery column",
+      "brand story opener with bold typography and photo stack"
+    ],
+    "notSuitableFor": [
+      "full-bleed image banners with text overlay (use hero-banner)",
+      "simple text-only hero sections"
+    ]
+  },
+
+  "usage": {
+    "pagesUsing": ["/index", "/fashion-trends-young-adults"],
+    "reuseCount": 2,
+    "lastUsed": "2026-05-11T14:23:00.000Z"
+  }
+}

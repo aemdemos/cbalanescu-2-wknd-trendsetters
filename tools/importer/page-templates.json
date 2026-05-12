@@ -1,0 +1,395 @@
+{
+  "metadata": {
+    "projectType": "doc"
+  },
+  "templates": [
+    {
+      "name": "homepage",
+      "urls": [
+        "https://wknd-trendsetters.pages.dev/"
+      ],
+      "description": "Homepage with hero, featured content, gallery, testimonials, articles, FAQ and CTA sections",
+      "blocks": [
+        {
+          "name": "hero-trendsetters",
+          "instances": ["header.section.secondary-section .grid-layout.tablet-1-column.grid-gap-xxl"]
+        },
+        {
+          "name": "columns-article",
+          "instances": ["main > section:nth-of-type(1) .grid-layout.grid-gap-lg"]
+        },
+        {
+          "name": "cards-gallery",
+          "instances": ["main > section:nth-of-type(2) .grid-layout.desktop-4-column.grid-gap-sm"]
+        },
+        {
+          "name": "tabs-testimonial",
+          "instances": [".tabs-wrapper"]
+        },
+        {
+          "name": "cards-article",
+          "instances": [".grid-layout.desktop-4-column.grid-gap-md"]
+        },
+        {
+          "name": "accordion-faq",
+          "instances": [".faq-list"]
+        },
+        {
+          "name": "hero-banner",
+          "instances": ["section.inverse-section .utility-position-relative", "section.inverse-section .container > *:last-child"]
+        }
+      ],
+      "sections": [
+        {
+          "id": "section-1",
+          "name": "Hero",
+          "selector": "header.section.secondary-section",
+          "style": "cream",
+          "blocks": ["hero-trendsetters"],
+          "defaultContent": []
+        },
+        {
+          "id": "section-2",
+          "name": "Featured Article",
+          "selector": "main > section:nth-of-type(1)",
+          "style": null,
+          "blocks": ["columns-article"],
+          "defaultContent": []
+        },
+        {
+          "id": "section-3",
+          "name": "Image Gallery",
+          "selector": "main > section:nth-of-type(2)",
+          "style": "cream",
+          "blocks": ["cards-gallery"],
+          "defaultContent": [".utility-text-align-center h2", ".utility-text-align-center .paragraph-lg"]
+        },
+        {
+          "id": "section-4",
+          "name": "Testimonials",
+          "selector": "main > section:nth-of-type(3)",
+          "style": null,
+          "blocks": ["tabs-testimonial"],
+          "defaultContent": []
+        },
+        {
+          "id": "section-5",
+          "name": "Latest Articles",
+          "selector": "main > section:nth-of-type(4)",
+          "style": "cream",
+          "blocks": ["cards-article"],
+          "defaultContent": [".utility-text-align-center h2", ".utility-text-align-center .paragraph-lg"]
+        },
+        {
+          "id": "section-6",
+          "name": "FAQ",
+          "selector": "main > section:nth-of-type(5)",
+          "style": null,
+          "blocks": ["accordion-faq"],
+          "defaultContent": [".grid-layout > div:first-child h2", ".grid-layout > div:first-child .subheading"]
+        },
+        {
+          "id": "section-7",
+          "name": "CTA Banner",
+          "selector": "section.section.inverse-section",
+          "style": "dark",
+          "blocks": ["hero-banner"],
+          "defaultContent": []
+        }
+      ]
+    },
+    {
+      "name": "landing-page",
+      "urls": [
+        "https://wknd-trendsetters.pages.dev/fashion-trends-young-adults",
+        "https://wknd-trendsetters.pages.dev/fashion-trends-young-adults-casual-sport",
+        "https://wknd-trendsetters.pages.dev/fashion-trends-of-the-season",
+        "https://wknd-trendsetters.pages.dev/fashion-insights"
+      ],
+      "description": "Fashion trend landing page with hero, featured categories, gallery, and CTA",
+      "blocks": [
+        {
+          "name": "hero-trendsetters",
+          "instances": ["header.section.secondary-section .grid-layout.tablet-1-column.grid-gap-xxl"]
+        },
+        {
+          "name": "cards-trend",
+          "instances": ["main > section:nth-of-type(1) .grid-layout.desktop-3-column"]
+        },
+        {
+          "name": "cards-article",
+          "instances": ["section#trends .grid-layout.desktop-4-column.grid-gap-md"]
+        },
+        {
+          "name": "cards-gallery",
+          "instances": ["main > section:nth-of-type(4) .grid-layout.desktop-4-column.grid-gap-sm"]
+        }
+      ],
+      "sections": [
+        {
+          "id": "section-1",
+          "name": "Hero",
+          "selector": "header.section.secondary-section",
+          "style": "cream",
+          "blocks": ["hero-trendsetters"],
+          "defaultContent": []
+        },
+        {
+          "id": "section-2",
+          "name": "Trend Categories",
+          "selector": "main > section:nth-of-type(1)",
+          "style": null,
+          "blocks": ["cards-trend"],
+          "defaultContent": []
+        },
+        {
+          "id": "section-3",
+          "name": "Intro Story",
+          "selector": "main > section:nth-of-type(2)",
+          "style": "cream",
+          "blocks": [],
+          "defaultContent": [".utility-text-align-center h2", ".utility-text-align-center .paragraph-lg"]
+        },
+        {
+          "id": "section-4",
+          "name": "Trends For Every Vibe",
+          "selector": "main > section#trends",
+          "style": null,
+          "blocks": ["cards-article"],
+          "defaultContent": [".utility-text-align-center h2"]
+        },
+        {
+          "id": "section-5",
+          "name": "Style Gallery",
+          "selector": "main > section:nth-of-type(4)",
+          "style": "cream",
+          "blocks": ["cards-gallery"],
+          "defaultContent": [".utility-text-align-center h2", ".utility-text-align-center .paragraph-lg"]
+        },
+        {
+          "id": "section-6",
+          "name": "CTA",
+          "selector": "main > section.accent-section",
+          "style": "accent-yellow",
+          "blocks": [],
+          "defaultContent": [".utility-text-align-center h2", ".utility-text-align-center p", ".utility-text-align-center a"]
+        }
+      ]
+    },
+    {
+      "name": "blog-listing",
+      "urls": [
+        "https://wknd-trendsetters.pages.dev/blog"
+      ],
+      "description": "Blog index/listing page with featured article and article grid",
+      "blocks": [
+        {
+          "name": "hero-blog",
+          "instances": ["header.section.secondary-section .grid-layout.tablet-1-column.grid-gap-xxl"]
+        },
+        {
+          "name": "columns-article",
+          "instances": ["main > section:nth-of-type(1) .grid-layout.grid-gap-lg"]
+        },
+        {
+          "name": "cards-article",
+          "instances": ["section#articles .grid-layout.desktop-4-column.grid-gap-md"]
+        }
+      ],
+      "sections": [
+        {
+          "id": "section-1",
+          "name": "Hero",
+          "selector": "header.section.secondary-section",
+          "style": null,
+          "blocks": ["hero-blog"],
+          "defaultContent": []
+        },
+        {
+          "id": "section-2",
+          "name": "Featured Article",
+          "selector": "main > section:nth-of-type(1)",
+          "style": null,
+          "blocks": ["columns-article"],
+          "defaultContent": []
+        },
+        {
+          "id": "section-3",
+          "name": "Latest Articles",
+          "selector": "main > section#articles",
+          "style": "cream",
+          "blocks": ["cards-article"],
+          "defaultContent": [".utility-text-align-center h2", ".utility-text-align-center .paragraph-lg"]
+        },
+        {
+          "id": "section-4",
+          "name": "Subscribe CTA",
+          "selector": "main > section.accent-section",
+          "style": "accent-yellow",
+          "blocks": [],
+          "defaultContent": [".utility-text-align-center h2", ".utility-text-align-center p", ".utility-text-align-center a"]
+        }
+      ]
+    },
+    {
+      "name": "blog-article",
+      "urls": [
+        "https://wknd-trendsetters.pages.dev/blog/latest-trends-young-casual-fashion",
+        "https://wknd-trendsetters.pages.dev/blog/fashion-trends-young-culture",
+        "https://wknd-trendsetters.pages.dev/blog/fashion-trends-young-style",
+        "https://wknd-trendsetters.pages.dev/blog/fashion-blog-post"
+      ],
+      "description": "Blog article detail page with headline, author metadata, and long-form content",
+      "blocks": [
+        {
+          "name": "hero-blog-post",
+          "instances": ["main > section:nth-of-type(1) .grid-layout.tablet-1-column.grid-gap-lg"]
+        }
+      ],
+      "sections": [
+        {
+          "id": "section-1",
+          "name": "Article Header",
+          "selector": "main > section:nth-of-type(1)",
+          "style": null,
+          "blocks": ["hero-blog-post"],
+          "defaultContent": []
+        },
+        {
+          "id": "section-2",
+          "name": "Article Body",
+          "selector": "main > section:nth-of-type(2)",
+          "style": null,
+          "blocks": [],
+          "defaultContent": [".blog-content"]
+        }
+      ]
+    },
+    {
+      "name": "case-studies",
+      "urls": [
+        "https://wknd-trendsetters.pages.dev/case-studies"
+      ],
+      "description": "Case studies page with hero, image gallery, testimonials, and CTA",
+      "blocks": [
+        {
+          "name": "hero-intro",
+          "instances": ["header.section.secondary-section .grid-layout.tablet-1-column.grid-gap-xxl"]
+        },
+        {
+          "name": "hero-blog-post",
+          "instances": ["main > section:nth-of-type(1) .grid-layout.grid-gap-lg"]
+        },
+        {
+          "name": "cards-gallery",
+          "instances": ["main > section:nth-of-type(2) .grid-layout.desktop-4-column.grid-gap-sm"]
+        },
+        {
+          "name": "tabs-testimonial",
+          "instances": [".tabs-wrapper"]
+        },
+        {
+          "name": "hero-banner",
+          "instances": ["section.inverse-section .utility-position-relative"]
+        }
+      ],
+      "sections": [
+        {
+          "id": "section-1",
+          "name": "Hero Intro",
+          "selector": "header.section.secondary-section",
+          "style": "cream",
+          "blocks": ["hero-intro"],
+          "defaultContent": []
+        },
+        {
+          "id": "section-2",
+          "name": "Featured Case",
+          "selector": "main > section:nth-of-type(1)",
+          "style": null,
+          "blocks": ["hero-blog-post"],
+          "defaultContent": []
+        },
+        {
+          "id": "section-3",
+          "name": "Image Gallery",
+          "selector": "main > section:nth-of-type(2)",
+          "style": "cream",
+          "blocks": ["cards-gallery"],
+          "defaultContent": [".utility-text-align-center h2", ".utility-text-align-center .paragraph-lg"]
+        },
+        {
+          "id": "section-4",
+          "name": "Testimonials",
+          "selector": "main > section#cases",
+          "style": null,
+          "blocks": ["tabs-testimonial"],
+          "defaultContent": []
+        },
+        {
+          "id": "section-5",
+          "name": "CTA Banner",
+          "selector": "main > section.inverse-section",
+          "style": "dark",
+          "blocks": ["hero-banner"],
+          "defaultContent": []
+        }
+      ]
+    },
+    {
+      "name": "faq",
+      "urls": [
+        "https://wknd-trendsetters.pages.dev/faq"
+      ],
+      "description": "FAQ page with hero, accordion, contact info, and CTA",
+      "blocks": [
+        {
+          "name": "hero-faq",
+          "instances": ["header.section.secondary-section .grid-layout.tablet-1-column.grid-gap-xxl"]
+        },
+        {
+          "name": "accordion-faq",
+          "instances": [".faq-list"]
+        },
+        {
+          "name": "columns-contact",
+          "instances": ["main > section.secondary-section .grid-layout.tablet-1-column.grid-gap-xxl"]
+        }
+      ],
+      "sections": [
+        {
+          "id": "section-1",
+          "name": "Hero",
+          "selector": "header.section.secondary-section",
+          "style": "cream",
+          "blocks": ["hero-faq"],
+          "defaultContent": []
+        },
+        {
+          "id": "section-2",
+          "name": "FAQ",
+          "selector": "main > section:nth-of-type(1)",
+          "style": null,
+          "blocks": ["accordion-faq"],
+          "defaultContent": []
+        },
+        {
+          "id": "section-3",
+          "name": "Contact",
+          "selector": "main > section.secondary-section",
+          "style": "cream",
+          "blocks": ["columns-contact"],
+          "defaultContent": []
+        },
+        {
+          "id": "section-4",
+          "name": "CTA",
+          "selector": "main > section.accent-section",
+          "style": "accent-yellow",
+          "blocks": [],
+          "defaultContent": [".utility-text-align-center h2", ".utility-text-align-center p", ".utility-text-align-center a"]
+        }
+      ]
+    }
+  ]
+}

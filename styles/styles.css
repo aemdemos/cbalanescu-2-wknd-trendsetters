@@ -261,3 +261,159 @@ main .section.light, main .section.highlight {
 .section.section-2 {
   background: rgb(0 0 0) none repeat scroll 0% 0% / auto padding-box border-box;
 }
+
+/* hero-style first section */
+main > div:first-child {
+  text-align: center;
+  padding: 80px 24px 60px;
+  background-color: var(--light-color);
+}
+
+main > div:first-child h1 {
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5em;
+}
+
+main > div:first-child p {
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--dark-color);
+}
+
+main > div:first-child p:last-child a {
+  display: inline-block;
+  padding: 0.6em 2em;
+  background-color: #131313;
+  color: #fff;
+  border-radius: 2.4em;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background-color 0.2s;
+}
+
+main > div:first-child p:last-child a:hover {
+  background-color: var(--dark-color);
+  color: #fff;
+  text-decoration: none;
+}
+
+/* subtle divider style */
+main hr {
+  border: none;
+  border-top: 2px solid #131313;
+  width: 60px;
+  margin: 0 0 1.5em;
+}
+
+/* middle section */
+main > div:nth-child(2) {
+  max-width: 800px;
+  margin: 60px auto;
+  padding: 0 24px;
+}
+
+main > div:nth-child(2) h2 {
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+main > div:nth-child(2) h3 {
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-top: 1.5em;
+  padding-top: 1em;
+  border-top: 1px solid #e0e0e0;
+}
+
+main > div:nth-child(2) h3:first-of-type {
+  border-top: none;
+  padding-top: 0;
+}
+
+/* last section - dark CTA */
+main > div:last-child {
+  background-color: #131313;
+  color: #fff;
+  text-align: center;
+  padding: 60px 24px;
+  margin: 0;
+}
+
+main > div:last-child h2 {
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+main > div:last-child p {
+  color: #ccc;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+main > div:last-child p:last-child a {
+  display: inline-block;
+  padding: 0.6em 2em;
+  border-radius: 2.4em;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+main > div:last-child p:last-child a:first-child {
+  background-color: #fff;
+  color: #131313;
+  margin-right: 0.5em;
+}
+
+main > div:last-child p:last-child a:first-child:hover {
+  background-color: #e0e0e0;
+  text-decoration: none;
+}
+
+main > div:last-child p:last-child a:last-child {
+  background-color: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+}
+
+main > div:last-child p:last-child a:last-child:hover {
+  background-color: rgba(255 255 255 / 10%);
+  text-decoration: none;
+}
+
+/* dark section style */
+main .section.dark {
+  background-color: #131313;
+  color: #fff;
+  margin: 0;
+  padding: 60px 0;
+}
+
+main .section.dark h1,
+main .section.dark h2,
+main .section.dark h3 {
+  color: #fff;
+}
+
+main .section.dark a.button:any-link {
+  background-color: #fff;
+  color: #131313;
+}
+
+main .section.dark a.button:hover {
+  background-color: #e0e0e0;
+}
+
+main .section.dark a.button.secondary {
+  background-color: transparent;
+  border-color: #fff;
+  color: #fff;
+}
+
+main .section.dark a.button.secondary:hover {
+  background-color: rgba(255 255 255 / 10%);
+}

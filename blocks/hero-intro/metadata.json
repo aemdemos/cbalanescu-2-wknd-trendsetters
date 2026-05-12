@@ -1,0 +1,45 @@
+{
+  "variantName": "hero-intro",
+  "baseBlock": "hero",
+  "version": "1.0.0",
+  "created": "2026-05-11T14:43:38.000Z",
+
+  "sourceContext": {
+    "originUrl": "https://wknd-trendsetters.pages.dev/case-studies",
+    "originPage": "case studies listing page",
+    "blockPosition": "top"
+  },
+
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "page-intro-hero",
+    "imagePattern": "noimg"
+  },
+
+  "contentPattern": {
+    "structure": "h1 heading + subheading + 1 CTA",
+    "buttonCount": 1,
+    "imageCount": 0
+  },
+
+  "reuseGuidance": {
+    "suitableFor": [
+      "text-only page intro heroes with heading + subheading + single CTA",
+      "landing/listing page intros on secondary-section backgrounds",
+      "simple content-driven hero sections without imagery"
+    ],
+    "notSuitableFor": [
+      "full-bleed image banners with text overlay (use hero-banner)",
+      "hero with single side image + 2 CTAs (use hero-blog)",
+      "blog/article detail headers with breadcrumbs + byline (use hero-blog-post)",
+      "homepage hero with stacked side images (use hero-trendsetters)"
+    ]
+  },
+
+  "usage": {
+    "pagesUsing": ["/case-studies"],
+    "reuseCount": 1,
+    "lastUsed": "2026-05-11T14:43:38.000Z"
+  }
+}

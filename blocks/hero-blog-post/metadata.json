@@ -1,0 +1,44 @@
+{
+  "variantName": "hero-blog-post",
+  "baseBlock": "hero",
+  "version": "1.0.0",
+  "created": "2026-05-11T14:38:30.000Z",
+
+  "sourceContext": {
+    "originUrl": "https://wknd-trendsetters.pages.dev/blog/fashion-blog-post",
+    "originPage": "blog article detail page",
+    "blockPosition": "top"
+  },
+
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "blog-article-header",
+    "imagePattern": "single-side-image"
+  },
+
+  "contentPattern": {
+    "structure": "cover image + breadcrumbs + h1 title + byline + date + read-time + topic tag",
+    "buttonCount": 0,
+    "imageCount": 1
+  },
+
+  "reuseGuidance": {
+    "suitableFor": [
+      "individual blog post / article detail pages",
+      "news article detail pages with cover image + title + byline + meta + tag",
+      "case study detail pages with similar header structure"
+    ],
+    "notSuitableFor": [
+      "blog listing / index pages with CTAs (use hero-blog)",
+      "full-bleed image banners with text overlay (use hero-banner)",
+      "homepage hero with stacked image gallery (use hero-trendsetters)"
+    ]
+  },
+
+  "usage": {
+    "pagesUsing": ["/blog/fashion-blog-post", "/case-studies"],
+    "reuseCount": 2,
+    "lastUsed": "2026-05-11T14:40:21.805Z"
+  }
+}
