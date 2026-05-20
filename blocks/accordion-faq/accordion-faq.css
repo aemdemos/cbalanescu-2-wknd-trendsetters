@@ -1,0 +1,111 @@
+/* FAQ accordion with light background, minimal styling */
+.accordion-faq {
+  background-color: #F7F7F4;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+/* Vertical stack, divider line between items */
+.accordion-faq > .accordion-faq-item {
+  border-bottom: 1px solid #E0E0DC;
+  margin: 0;
+  padding: 0;
+}
+
+.accordion-faq > .accordion-faq-item:last-child {
+  border-bottom: none;
+}
+
+/* Row: side-by-side flex, more right padding for chevron spacing */
+.accordion-faq .accordion-faq-item-label {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  min-height: 48px;
+  padding: 16px 40px 16px 16px;
+  box-sizing: border-box;
+  cursor: pointer;
+  background: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Hide summary marker */
+.accordion-faq details summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Question text: allow wrapping, match font and spacing */
+.accordion-faq .accordion-faq-item-label p {
+  color: #212121;
+  font-size: 15px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  margin: 0;
+  line-height: 1.5;
+  flex: 1 1 0;
+  white-space: normal;
+  overflow: visible;
+  text-overflow: unset;
+}
+
+/* Chevron arrow: slightly thinner, lighter, perfectly right-aligned */
+.accordion-faq .accordion-faq-item-label::after {
+  display: block;
+  width: 18px;
+  height: 18px;
+  border-style: solid;
+  border-color: #212121;
+  border-width: 0 1.5px 1.5px 0;
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+  background: transparent;
+  box-sizing: border-box;
+}
+
+/* Chevron rotates up when opened */
+.accordion-faq details[open] .accordion-faq-item-label::after {
+  transform: translateY(-50%) rotate(-135deg);
+}
+
+/* Answer/content body: match overall padding and style */
+.accordion-faq .accordion-faq-item-body {
+  padding: 0 16px 16px;
+  color: #212121;
+  font-size: 15px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  margin: 0;
+  line-height: 1.6;
+  background: none;
+}
+
+/* Remove extra bolding and spacing from details element if inherited */
+.accordion-faq details {
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+}
+
+/* Responsive: Adjust spacing for smaller screens */
+@media (width <= 600px) {
+  .accordion-faq .accordion-faq-item-label {
+    padding: 12px 24px 12px 8px;
+    min-height: 40px;
+  }
+
+  .accordion-faq .accordion-faq-item-body {
+    padding: 0 8px 12px;
+  }
+
+  .accordion-faq .accordion-faq-item-label::after {
+    right: 8px;
+  }
+}
